@@ -1,29 +1,11 @@
-import { FC } from 'react';
+import { Navigation } from '@/components/Navigation';
 import { Logo } from '../Logo';
 
-export const Header: FC = () => {
+export const Header = () => {
   return (
-    <header className="flex h-[38px] items-center justify-between font-eUkraine font-light">
+    <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between border-b bg-white/50 font-eUkraine font-light">
       <Logo />
-      <nav>
-        <ol className="flex gap-x-8 text-lg hover:[&>*]:underline">
-          <li>
-            <a href="#">Про мене</a>
-          </li>
-          <li>
-            <a href="#">Запити</a>
-          </li>
-          <li>
-            <a href="#">Результати зустрічей</a>
-          </li>
-          <li>
-            <a href="#">Відгуки</a>
-          </li>
-          <li>
-            <a href="#">Послуги та вартість</a>
-          </li>
-        </ol>
-      </nav>
+      <Navigation />
     </header>
   );
 };
