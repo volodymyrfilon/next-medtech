@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Suspense } from 'react';
 
+import { Footer } from '@/layout/Footer';
+import { Header } from '@/layout/Header';
 import './global.css';
 import Loading from './loading';
 
@@ -75,8 +77,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="uk" className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
       <body className="relative flex h-screen flex-col">
         <Suspense fallback={<Loading />}>
+          <Header />
           {children}
-          <div id="modal" />
+          <Footer />
+          {/* POPUP COOCKIE + GTAG */}
         </Suspense>
       </body>
     </html>
