@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const Navigation = ({ className }: { className?: string }) => {
   return (
     <nav>
-      <ol className={`flex gap-x-8 text-lg hover:[&>*]:underline ${className}`}>
+      <ol className={`flex gap-x-8 text-sm hover:[&>*]:underline ${className}`}>
         <li>
           <Link href="#">Про мене</Link>
         </li>

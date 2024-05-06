@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Suspense } from 'react';
 
+import { PrivacyPolicyPopup } from '@/components/PrivacyPolicyPopup';
 import './global.css';
 import Loading from './loading';
 
@@ -77,6 +78,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Suspense fallback={<Loading />}>
           {children}
           {/* POPUP COOCKIE + GTAG */}
+          <PrivacyPolicyPopup />
         </Suspense>
       </body>
     </html>
