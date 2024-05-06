@@ -8,17 +8,24 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  background-color: #FFF;
-  color: #070A11;
+  background-color: #fff;
+  color: #070a11;
   font-family: var(--font-eUkraineHead);
   font-weight: 400;
+}
+
+// Privacy Policy
+.privacy-policy_num_extended {
+  -webkit-text-stroke: 1.7px #C3B1A4);
+  text-stroke: 1.7px #C3B1A4);
+  color: transparent;
 }

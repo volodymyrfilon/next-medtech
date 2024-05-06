@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Suspense } from 'react';
 
-import { PrivacyPolicyPopup } from '@/components/PrivacyPolicyPopup';
+import { PrivacyPolicyPopup } from '@/components/shared/PrivacyPolicyPopup';
 import './global.css';
 import Loading from './loading';
 

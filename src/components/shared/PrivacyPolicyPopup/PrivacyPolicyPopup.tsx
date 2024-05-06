@@ -27,13 +27,13 @@ export const PrivacyPolicyPopup = () => {
           <div className="w-5/6">
             Ми використовуємо файли cookie щоб зробити ваше користування веб-сайтом зручнішим.
             Продовжуючи користуватися цим сайтом, ви погоджуєтесь із використанням файлів cookies.
-            Дізнатись більше про файли cookie можна в
+            Дізнатись більше про файли cookie можна в&nbsp;
             <Link href="/privacy-policy" className="underline">
               Політиці Конфіденційності
             </Link>
           </div>
           <button
-            className="text-xs font-normal uppercase"
+            className="rounded border p-1.5 text-xs font-normal uppercase"
             onClick={hidePopup}
             aria-label="Прийняти політику конфіденційності"
           >
