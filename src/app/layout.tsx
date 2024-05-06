@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Suspense } from 'react';
 
+import { PrivacyPolicyPopup } from '@/components/PrivacyPolicyPopup';
 import './global.css';
 import Loading from './loading';
 
@@ -73,10 +74,11 @@ const eUkraineHead = localFont({
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="uk" className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
-      <body className="relative flex h-screen flex-col">
+      <body className="relative flex h-[300vh]  flex-col">
         <Suspense fallback={<Loading />}>
           {children}
           {/* POPUP COOCKIE + GTAG */}
+          <PrivacyPolicyPopup />
         </Suspense>
       </body>
     </html>
