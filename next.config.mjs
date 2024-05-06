@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ['cdn.dribbble.com'],
+  },
   reactStrictMode: true,
   webpack(config) {
     const fileLoaderRule = config.module.rules.find(rule => rule.test?.test?.('.svg'));

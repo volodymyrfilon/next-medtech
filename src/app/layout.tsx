@@ -71,10 +71,13 @@ const eUkraineHead = localFont({
   variable: '--font-eUkraineHead',
 });
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="uk" className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
-      <body className="relative flex h-[300vh]  flex-col">
+    <html
+      lang="uk"
+      className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans  selection:bg-accent-primary/50`}
+    >
+      <body className="relative flex h-[300vh] flex-col">
         <Suspense fallback={<Loading />}>
           {children}
           {/* POPUP COOCKIE + GTAG */}
