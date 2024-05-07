@@ -1,4 +1,5 @@
 import Add from '../../../../public/icons/add.svg';
+import ArrowCircleUp from '../../../../public/icons/arrow-circle-up.svg';
 import ArrowDown from '../../../../public/icons/arrow-down.svg';
 import ArrowLeft from '../../../../public/icons/arrow-left.svg';
 import ArrowRight from '../../../../public/icons/arrow-right.svg';
@@ -18,4 +19,5 @@ export const ICONS = {
   ADD: Add,
   QUOTE: Quote,
   MAIL: Mail,
+  ARROW_CIRCLE_UP: ArrowCircleUp,
 };
