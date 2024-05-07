@@ -3,17 +3,16 @@ import { Contact } from '@/sections/Contact';
 import { Feedbacks } from '@/sections/Feedbacks';
 import { Hero } from '@/sections/Hero';
 import { Results } from '@/sections/Results';
-import { FC } from 'react';
 
-const page: FC = () => {
+const page = () => {
   return (
-    <main>
+    <>
       <Hero />
       <About />
       <Results />
       <Feedbacks />
       <Contact />
-    </main>
+    </>
   );
 };
 

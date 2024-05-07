@@ -2,23 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --primary: #c3b1a4;
+  }
+  body {
+    color: #070a11;
+    font-family: var(--font-eUkraineHead);
+    font-weight: 400;
   }
 }
 
-body {
-  background-color: #FFF;
-  color: #070A11;
-  font-family: var(--font-eUkraineHead);
-  font-weight: 400;
+.h1 {
+  @apply text-[44px] font-bold leading-none tracking-[-2px] sm:text-6xl xl:text-[64px] xl:leading-[72px];
+}
+
+.extended {
+  -webkit-text-stroke: 2px #c3b1a4;
+  text-stroke: 2px #c3b1a4;
+  color: transparent;
 }
