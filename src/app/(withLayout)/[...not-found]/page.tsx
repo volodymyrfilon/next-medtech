@@ -13,9 +13,9 @@ const page = () => {
         width={650}
         alt={`Сторінку не знайдено!`}
       />
-      <Link href="/">
+      <Link href="/" className="flex items-center gap-x-2">
         {/* <Button className="flex items-center gap-x-2"> */}
-        <ICONS.ARROW_LEFT className={`h-4 w-4`} aria-label={''} />
+        <ICONS.ARROW_LEFT className={`h-6 w-6`} aria-label={''} />
         На головну
         {/* </Button> */}
       </Link>

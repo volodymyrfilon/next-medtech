@@ -135,7 +135,7 @@ const page = () => {
           {/* mail */}
           <div className="flex flex-col gap-x-4 xl:items-start">
             <div className="flex items-center gap-x-2 text-sm md:text-xl">
-              {/* {ICONS.Mail} */}
+              <ICONS.MAIL className={`h-6 w-6`} aria-label={''} />
               <h2 className="font-semibold">Пошта</h2>
             </div>
             <Link
@@ -146,26 +146,12 @@ const page = () => {
               example@gmail.com
             </Link>
           </div>
-          {/* phone */}
-          {/* <div className="flex flex-col gap-x-4 xl:items-start">
-            <div className="flex items-center gap-x-2 text-sm md:text-xl">
-              <PhoneCall size={20} className="text-accent-primary" />
-              <h2 className="font-semibold ">{phone.text}</h2>
-            </div>
-            <Link
-              rel="nofollow noreferrer"
-              href="tel:+48578568311"
-              className="hover:text-accent-primary focus:text-accent-primary text-sm font-semibold leading-6 text-black/60 md:text-base"
-            >
-              {phone.content}
-            </Link>
-          </div> */}
         </div>
         {/* buttons */}
         <div className="special:flex-row mt-8 flex flex-col gap-4 text-base md:text-lg">
-          <Link href="/">
+          <Link href="/" className="flex items-center gap-x-2">
             {/* <Button className="flex items-center gap-x-2"> */}
-            <ICONS.ARROW_LEFT className={`h-4 w-4`} aria-label={''} />
+            <ICONS.ARROW_LEFT className={`h-6 w-6`} aria-label={''} />
             На головну
             {/* </Button> */}
           </Link>
