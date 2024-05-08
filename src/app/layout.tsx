@@ -79,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="relative flex h-[300vh] flex-col">
         <Suspense fallback={<Loading />}>
-          <div className="px-8">{children}</div>
+          {children}
           {/* POPUP COOCKIE + GTAG */}
           <PrivacyPolicyPopup />
         </Suspense>
