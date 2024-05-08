@@ -1,6 +1,7 @@
-import { ICONS } from '@/components/shared/icons';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { ICONS } from '@/components/shared/icons';
 
 const page = () => {
   return (

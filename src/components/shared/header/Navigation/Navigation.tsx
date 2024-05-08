@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-export const Navigation = ({ className }: { className?: string }) => {
+export const Navigation = ({ containerStyles }: { containerStyles?: string }) => {
   return (
     <nav>
-      <ol className={`flex gap-x-8 text-sm hover:[&>*]:underline ${className}`}>
+      <ol
+        className={`flex flex-col gap-x-8 text-sm lg:flex-row hover:[&>*]:underline ${containerStyles}`}
+      >
         <li>
           <Link href="#">Про мене</Link>
         </li>
