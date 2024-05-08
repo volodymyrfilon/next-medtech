@@ -3,7 +3,7 @@ import { ICONS } from '@/components/shared/icons';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Image from 'next/image';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 interface ServiceProps {
   buttonClassName: string;
@@ -44,7 +44,7 @@ const services: ServiceProps[] = [
   },
 ];
 
-export const Hero: FC = () => {
+export const Hero = () => {
   return (
     <section id="hero" className="mt-8">
       <Title h1>
@@ -56,13 +56,14 @@ export const Hero: FC = () => {
           alt="Image of author"
           height={230}
           width={230}
+          priority
           className=""
         />
       </div>
       <div className="mt-8 flex flex-col gap-y-4">
         {services.map((service, index) => (
-          <Card variant={service.variant} title={service.title} link={service.link}>
-            <Button variant="icon" className={service.buttonClassName}>
+          <Card variant={service.variant} title={service.title} link={service.link} key={index}>
+            <Button variant="icon" className={service.buttonClassName} aria-label={service.title}>
               {service.icon}
             </Button>
           </Card>

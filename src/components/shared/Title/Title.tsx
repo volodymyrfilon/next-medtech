@@ -8,9 +8,5 @@ interface TitleProps {
 
 export const Title = ({ children, h1 = false, className }: TitleProps) => {
   const Tag = h1 ? 'h1' : 'h2';
-  return (
-    <Tag className={`text-center text-3xl text-[32px] font-bold leading-[38px] ${className}`}>
-      {children}
-    </Tag>
-  );
+  return <Tag className={`text_32px text-center text-3xl font-bold ${className}`}>{children}</Tag>;
 };

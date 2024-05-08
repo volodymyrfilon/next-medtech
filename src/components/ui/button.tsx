@@ -16,7 +16,7 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={`flex items-center justify-center rounded-full px-5 py-2.5 font-eUkraine text-sm font-light outline-none duration-300 active:scale-90 active:outline-none ${className} ${
+      className={`flex items-center justify-center rounded-full px-5 py-2.5 font-eUkraine text-xs font-light outline-none duration-300 active:scale-90 active:outline-none ${className} ${
         !disabled
           ? variant === 'primary'
             ? 'bg-accent-primary text-white hover:bg-accent-primary/50  focus:outline-accent-primary'

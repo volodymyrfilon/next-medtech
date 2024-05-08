@@ -42,3 +42,7 @@ body {
 .logo-hover-animate:hover {
   @apply animate-text bg-gradient-to-r  from-yellow-500 to-blue-500 bg-clip-text text-transparent;
 }
+
+.text_32px {
+  @apply text-[32px] leading-[38px];
+}
