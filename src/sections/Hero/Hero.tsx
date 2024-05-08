@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { ReactNode } from 'react';
 
 interface ServiceProps {
-  buttonClassName: string;
+  buttonClassName?: string;
   variant: 'primary' | 'gray';
   title: string;
   link: string;
@@ -15,21 +15,21 @@ interface ServiceProps {
 
 const services: ServiceProps[] = [
   {
-    buttonClassName: 'border border-accent-dark/10',
+    buttonClassName: 'border border-accent-dark/10 focus:outline-accent-dark/10',
     variant: 'gray',
     title: 'Цвяхотерапія',
     link: '/',
     icon: <ICONS.ADD className="h-6 w-6 fill-accent-dark" />,
   },
   {
-    buttonClassName: 'border border-accent-dark/10',
+    buttonClassName: 'border border-accent-dark/10 focus:outline-accent-dark/10',
     variant: 'gray',
     title: 'Розбір Матриці Долі',
     link: '/',
     icon: <ICONS.ADD className="h-6 w-6 fill-accent-dark" />,
   },
   {
-    buttonClassName: 'border border-accent-dark/10',
+    buttonClassName: 'border border-accent-dark/10 focus:outline-accent-dark/10',
     variant: 'gray',
     title: 'МАК-карти',
     link: '/',

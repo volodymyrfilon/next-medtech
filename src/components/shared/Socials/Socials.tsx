@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { ICONS } from '../icons';
 
-export const Socials = ({ containerStyles }: { containerStyles?: string }) => {
+export const Socials = ({ className = '' }: { className?: string }) => {
   return (
-    <div className={`flex w-full gap-x-4 ${containerStyles}`}>
+    <div className={`flex w-full gap-x-4 ${className}`}>
       <Link href="https://www.instagram.com/julisadhu_/" rel="nofollow noreffer" target="_blank">
         <ICONS.INSTAGRAM className="h-10 w-10 fill-white hover:fill-accent-primary" />
       </Link>

@@ -22,7 +22,11 @@ export const About = () => {
         <div key={index} className="flex flex-col gap-y-8">
           <h3 className="text_32px font-bold text-white">{item.title}</h3>
           <p className="font-eUkraine text-sm font-extralight text-white/70">{item.text}</p>
-          <Button variant="white" className="flex w-[152px] gap-x-1">
+          <Button
+            variant="white"
+            className="flex w-[152px] gap-x-1"
+            aria-label={`Докладніше ${item.title}`}
+          >
             Докладніше
             <ICONS.ARROW_RIGHT className="h-6 w-6" />
           </Button>
