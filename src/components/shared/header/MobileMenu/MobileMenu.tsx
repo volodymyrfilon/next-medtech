@@ -46,12 +46,12 @@ export const MobileMenu = () => {
           </div>
         </div>
         {/* Nav */}
-        <Navigation containerStyles="text-white [&>*]:py-5 [&>*]:pl-5 [&>*]:border-t [&>*]:border-white last:border-b" />
+        <Navigation className="text-white last:border-b [&>*]:border-t [&>*]:border-white [&>*]:py-5 [&>*]:pl-5" />
       </div>
 
       {/* Open Menu Button */}
       <div
-        className={`h-5 w-6 cursor-pointer flex-col justify-between ${!isOpen ? 'flex' : 'hidden'}`}
+        className={`h-5 w-6 cursor-pointer flex-col justify-between lg:hidden ${!isOpen ? 'flex' : 'hidden'}`}
         onClick={openMenu}
       >
         <span className="h-0.5 w-full bg-gray-800"></span>

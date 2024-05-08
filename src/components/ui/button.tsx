@@ -1,19 +1,19 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
-interface ButtonProps
-  extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+interface ButtonProps {
   children: ReactNode;
   variant?: 'primary' | 'black' | 'white' | 'icon';
   disabled?: boolean;
+  className?: string;
 }
 
-export const Button: FC<ButtonProps> = ({
+export const Button = ({
   variant = 'primary',
   disabled = false,
   children,
   className,
   ...props
-}) => {
+}: ButtonProps) => {
   return (
     <button
       className={`flex items-center justify-center rounded-full px-5 py-2.5 font-eUkraine text-sm font-light outline-none duration-300 active:scale-90 active:outline-none ${className} ${

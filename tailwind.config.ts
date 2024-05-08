@@ -28,6 +28,7 @@ const config: Config = {
         accent: {
           primary: '#C3B1A4',
           dark: '#070A11',
+          gray: '#F0F1F3',
         },
       },
       fontFamily: {

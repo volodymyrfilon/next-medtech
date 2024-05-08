@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-export const Navigation = ({ containerStyles }: { containerStyles?: string }) => {
+export const Navigation = ({ className }: { className?: string }) => {
   return (
     <nav>
       <ol
-        className={`flex flex-col gap-x-8 text-sm lg:flex-row hover:[&>*]:underline ${containerStyles}`}
+        className={`flex flex-col gap-x-8 text-sm lg:flex-row hover:[&>*]:underline ${className}`}
       >
         <li>
           <Link href="#">Про мене</Link>
