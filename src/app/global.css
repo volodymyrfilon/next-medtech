@@ -2,15 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --primary: #c3b1a4;
-  }
-  body {
-    color: #070a11;
-    font-family: var(--font-eUkraineHead);
-    font-weight: 400;
-  }
+:root {
+  --primary: #c3b1a4;
+}
+body {
+  color: #070a11;
+  font-family: var(--font-eUkraineHead);
+  font-weight: 400;
 }
 
 .h1 {
