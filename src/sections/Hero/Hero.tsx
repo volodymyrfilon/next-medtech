@@ -1,5 +1,5 @@
 import { FC } from 'react';
 
 export const Hero: FC = () => {
-  return <div>Hero</div>;
+  return <section id="hero">Hero</section>;
 };

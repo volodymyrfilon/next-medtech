@@ -11,6 +11,24 @@ body {
   font-weight: 400;
 }
 
+/* Width / Track / Handle / Handle on Hover & Active */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+::-webkit-scrollbar-thumb:hover {
+  cursor: grab;
+  background-color: rgba(195, 177, 164, 0.75);
+}
+::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
+}
+
 .h1 {
   @apply text-[44px] font-bold leading-none tracking-[-2px] sm:text-6xl xl:text-[64px] xl:leading-[72px];
 }

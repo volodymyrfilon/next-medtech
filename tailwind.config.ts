@@ -36,7 +36,7 @@ const config: Config = {
         eUkraineHead: ['var(--font-eUkraineHead)'],
       },
       animation: {
-        text: 'text 2s ease infinite',
+        text: 'text 3s ease infinite',
       },
       keyframes: {
         text: {
