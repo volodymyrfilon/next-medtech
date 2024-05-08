@@ -5,7 +5,7 @@ import { ICONS } from '@/components/shared/icons';
 
 const page = () => {
   return (
-    <section className="flex h-screen select-none flex-col items-center justify-center">
+    <section className="flex h-screen select-none flex-col items-center justify-center px-8">
       <h1 className="h1 extended text-center">Сторінку не знайдено! :(</h1>
       <Image
         src="https://cdn.dribbble.com/users/252114/screenshots/3840347/mong03b.gif"
