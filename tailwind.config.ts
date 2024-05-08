@@ -24,6 +24,9 @@ const config: Config = {
           xl: '2.5rem',
         },
       },
+      backgroundImage: {
+        'matrix-layer': 'url("/images/hero/matrix.png")',
+      },
       colors: {
         accent: {
           primary: '#C3B1A4',

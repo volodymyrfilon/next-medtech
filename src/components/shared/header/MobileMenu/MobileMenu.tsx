@@ -30,7 +30,7 @@ export const MobileMenu = () => {
 
       {/* Menu */}
       <div
-        className={`fixed bottom-0 right-0 top-0 z-50 flex w-[80%] transform flex-col gap-y-8 bg-accent-dark/80 px-8 py-2.5 transition-transform duration-500 ${
+        className={`fixed bottom-0 right-0 top-0 z-50 flex w-[80%] transform flex-col gap-y-8 bg-accent-dark/80 px-5 py-2.5 transition-transform duration-500 ${
           isOpen ? 'translate-x-0 ' : 'translate-x-full'
         }`}
       >

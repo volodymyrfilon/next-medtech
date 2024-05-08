@@ -6,7 +6,7 @@ const WithLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Header />
-      <main className="mt-16 px-5">{children}</main>
+      <main className="mt-16 flex flex-col gap-y-8 px-5">{children}</main>
       <Footer />
       <ScrollBtn />
     </>
