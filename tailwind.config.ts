@@ -34,6 +34,21 @@ const config: Config = {
         eUkraine: ['var(--font-eUkraine)'],
         eUkraineHead: ['var(--font-eUkraineHead)'],
       },
+      animation: {
+        text: 'text 2s ease infinite',
+      },
+      keyframes: {
+        text: {
+          '0%, 50%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left top',
+          },
+          '25%, 75%': {
+            'background-size': '200% 200%',
+            'background-position': 'right bottom',
+          },
+        },
+      },
     },
   },
   plugins: [],
