@@ -1,6 +1,6 @@
 'use client';
 
-import { useScrollProgress } from '@/hooks/useScrollProgress';
+import useScrollProgress from '@/hooks/useScrollProgress';
 import { Link as Scroll } from 'react-scroll';
 import { ICONS } from '../icons';
 
