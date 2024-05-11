@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select } from '@/components/ui/select';
+import { Textarea } from '@/components/ui/textarea';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ICONS } from '../../icons';
 
@@ -56,6 +57,7 @@ export const Form = () => {
     >
       <Input {...register('fullName')} type="text" placeholder="Ім'я та прізвище" />
       <Input {...register('email')} type="email" placeholder="Email" />
+      <Textarea />
       <Select
         title="Як з Вами зв'язатися?"
         register={register('contactVia')}
