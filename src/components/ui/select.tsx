@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { UseFormRegisterReturn } from 'react-hook-form';
 import { ICONS } from '../shared/icons';
 
 interface SelectOption {
@@ -10,24 +9,19 @@ interface SelectOption {
 }
 interface SelectProps {
   className?: string;
-  register: UseFormRegisterReturn;
-  disabled?: boolean;
+  name: string;
   title?: string;
   options: SelectOption[];
+  onSelect: (value: string) => void;
 }
 
-export const Select = ({
-  className = '',
-  disabled = false,
-  title,
-  options,
-  register,
-}: SelectProps) => {
+export const Select = ({ className = '', title, options, name, onSelect }: SelectProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selected, setSelected] = useState<SelectOption>(options[1]);
-
+  const [selected, setSelected] = useState<SelectOption | null>(null);
+  const handleClick = () => setIsOpen(!isOpen);
   const onChangeSelected = (selectedOption: SelectOption) => {
     setSelected(selectedOption);
+    onSelect(selectedOption.value);
     setIsOpen(false);
   };
 
@@ -35,6 +29,7 @@ export const Select = ({
     <label className="relative">
       <span className="">{title}</span>
       <div
+        id={name}
         className={`flex h-[88px] items-center gap-x-4 rounded-[20px] bg-white p-2.5 pl-4 leading-[68px] focus:outline-accent-primary ${className}`}
       >
         {selected ? (
@@ -63,13 +58,12 @@ export const Select = ({
       </div>
       <div
         className="absolute bottom-2.5 right-4 flex h-[70px] w-[70px] cursor-pointer items-center justify-center rounded-[20px] bg-accent-dark"
-        onClick={() => setIsOpen(prev => !prev)}
+        onClick={handleClick}
       >
         <ICONS.ARROW_DOWN
           className={`h-8 w-8 fill-white duration-300 ${isOpen ? 'rotate-180' : ''}`}
         />
       </div>
-      {/* <input type="hidden" {...register} value={value} /> */}
     </label>
   );
 };

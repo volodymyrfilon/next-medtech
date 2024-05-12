@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ICONS } from '../../icons';
 
@@ -17,14 +18,14 @@ interface FormFields {
   acceptTermsOfUse: boolean;
 }
 
-const selectConsultationFormat = [
+const selectContactVia = [
   {
     icon: <ICONS.INSTAGRAM className="h-8 w-8" />,
-    value: 'Instagram',
+    value: 'Інстаграм',
   },
   {
     icon: <ICONS.TELEGRAM className="h-8 w-8" />,
-    value: 'Telegram',
+    value: 'Телеграм',
   },
 ];
 
@@ -36,17 +37,21 @@ export const Form = () => {
     setValue,
     formState: { errors, isSubmitting },
   } = useForm<FormFields>();
-  const methods = useForm();
-
   const onSubmit: SubmitHandler<FormFields> = async data => {
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 800));
       console.log(data);
     } catch (error) {
       setError('root', {
         message: 'Sorry',
       });
     }
+  };
+
+  const [onSelectedContactVia, setOnSelectedContactVia] = useState<string | null>(null);
+  const handleSelectContactVia = (value: string) => {
+    setOnSelectedContactVia(value);
+    setValue('contactVia', value as 'telegram' | 'instagram');
   };
 
   return (
@@ -60,8 +65,9 @@ export const Form = () => {
       <Textarea />
       <Select
         title="Як з Вами зв'язатися?"
-        register={register('contactVia')}
-        options={selectConsultationFormat}
+        name={'contactVia'}
+        options={selectContactVia}
+        onSelect={handleSelectContactVia}
       />
       <Button
         disabled={isSubmitting}
