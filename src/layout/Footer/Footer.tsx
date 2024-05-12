@@ -5,7 +5,7 @@ import { Logo } from '../Logo';
 
 export const Footer: FC = () => {
   return (
-    <footer className="mx-5 flex flex-col gap-y-8 rounded-[30px] bg-accent-dark px-10 py-12 text-white">
+    <footer className="flex flex-col gap-y-8 rounded-[30px] bg-accent-dark px-10 py-12 text-white">
       <Logo white animateOnHover />
       <Socials />
       {/* privacy policy & copyright*/}

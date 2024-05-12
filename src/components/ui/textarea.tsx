@@ -1,15 +1,18 @@
+import { UseFormRegisterReturn } from 'react-hook-form';
+
 export const Textarea = ({
   className,
   placeholder,
-  ...props
+  register,
 }: {
   className?: string;
   placeholder?: string;
+  register: UseFormRegisterReturn;
 }) => {
   return (
     <textarea
       className={` w-full rounded-[20px] px-4 py-[30px] outline-accent-primary ${className}`}
-      {...props}
+      {...register}
       rows={10}
       placeholder={placeholder}
     />
