@@ -24,7 +24,11 @@ export const FeedbackCard = ({
         target="_blank"
         className="mt-auto"
       >
-        <Button variant="icon" className="!bg-accent-primary">
+        <Button
+          variant="icon"
+          className="!bg-accent-primary"
+          aria-label="Перейти на сторінку в Інстаграм"
+        >
           <Instagram className="h-5 w-5 stroke-white" />
         </Button>
       </Link>

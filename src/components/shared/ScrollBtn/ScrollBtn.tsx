@@ -4,12 +4,12 @@ import useScrollProgress from '@/hooks/useScrollProgress';
 import { CircleArrowUp } from 'lucide-react';
 import { Link as Scroll } from 'react-scroll';
 
-export const ScrollBtn = () => {
+export const ScrollBtn = ({ link = undefined }: { link?: string }) => {
   const isVisible = useScrollProgress() > 20;
   return (
     <Scroll
-      to="hero"
-      href="hero"
+      to={`${link || 'hero'}`}
+      href={`${link || 'hero'}`}
       smooth={true}
       duration={300}
       aria-label="Повернутися на гору"

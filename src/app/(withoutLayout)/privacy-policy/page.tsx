@@ -1,4 +1,6 @@
-import { ICONS } from '@/components/shared/icons';
+import { ScrollBtn } from '@/components/shared/ScrollBtn';
+import { Button } from '@/components/ui/button';
+import { ChevronLeft, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 const privacyPolicyData = {
@@ -95,12 +97,22 @@ const privacyPolicyData = {
 const page = () => {
   const { title, dateLastUpdated, content } = privacyPolicyData;
   return (
-    <section className="mb-24 mt-14 min-h-screen xl:mb-32">
+    <section className="mb-24 mt-14 min-h-screen xl:mb-32" id="privacy-policy">
       <div className="container">
+        <Link href="/" className="flex items-center gap-x-2 text-white">
+          <Button
+            variant="primary"
+            className="flex items-center gap-x-2 [&>*]:hover:-translate-x-3"
+            aria-label="Повернутись на головну сторінку"
+          >
+            <ChevronLeft className="h-5 w-5" />
+            На головну
+          </Button>
+        </Link>
         {/* page title and date */}
-        <div className="">
+        <div className="mt-8">
           <h1 className="h1 extended font-eUkraineHead uppercase">{title}</h1>
-          <h3 className="text-muted-foreground text-sm">{dateLastUpdated}</h3>
+          <h3 className="text-sm text-accent-dark/60">{dateLastUpdated}</h3>
         </div>
 
         {/* privacy policy content */}
@@ -135,7 +147,7 @@ const page = () => {
           {/* mail */}
           <div className="flex flex-col gap-x-4 xl:items-start">
             <div className="flex items-center gap-x-2 text-sm md:text-xl">
-              <ICONS.MAIL className={`h-6 w-6`} aria-label={''} />
+              <Mail className="h-5 w-5" />
               <h2 className="font-semibold">Пошта</h2>
             </div>
             <Link
@@ -149,14 +161,19 @@ const page = () => {
         </div>
         {/* buttons */}
         <div className="special:flex-row mt-8 flex flex-col gap-4 text-base md:text-lg">
-          <Link href="/" className="flex items-center gap-x-2">
-            {/* <Button className="flex items-center gap-x-2"> */}
-            <ICONS.ARROW_LEFT className={`h-6 w-6`} aria-label={''} />
-            На головну
-            {/* </Button> */}
+          <Link href="/" className="flex items-center gap-x-2 text-white">
+            <Button
+              variant="primary"
+              className="flex items-center gap-x-2 [&>*]:hover:-translate-x-3"
+              aria-label="Повернутись на головну сторінку"
+            >
+              <ChevronLeft className="h-5 w-5" />
+              На головну
+            </Button>
           </Link>
         </div>
       </div>
+      <ScrollBtn link="privacy-policy" />
     </section>
   );
 };

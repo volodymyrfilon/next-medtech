@@ -87,7 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="uk"
       className={`${eUkraineHead.variable} ${eUkraine.variable} ${didactGothic.variable} font-sans  selection:bg-accent-primary/50`}
     >
-      <body className="relative flex h-[300vh] flex-col">
+      <body className="relative flex flex-col">
         <Suspense fallback={<Loading />}>
           {children}
           {/* POPUP COOCKIE + GTAG */}

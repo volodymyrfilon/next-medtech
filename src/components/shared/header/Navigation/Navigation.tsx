@@ -14,19 +14,19 @@ export const Navigation = ({
         onClick={onClick}
       >
         <li>
-          <Link href="#">Про мене</Link>
+          <Link href="/#about">Про мене</Link>
         </li>
         <li>
-          <Link href="#">Запити</Link>
+          <Link href="/#result">Запити</Link>
         </li>
         <li>
-          <Link href="#">Результати зустрічей</Link>
+          <Link href="/#feedback">Результати зустрічей</Link>
         </li>
         <li>
-          <Link href="#">Відгуки</Link>
+          <Link href="/#feedback">Відгуки</Link>
         </li>
         <li>
-          <Link href="#">Послуги та вартість</Link>
+          <Link href="/#contact">Послуги та вартість</Link>
         </li>
       </ol>
     </nav>

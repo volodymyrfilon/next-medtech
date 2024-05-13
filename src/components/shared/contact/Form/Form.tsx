@@ -16,12 +16,11 @@ const schema = z.object({
   fullName: z
     .string()
     .min(3, { message: 'Мінімальна кількість 3 символи' })
-    .max(50, { message: 'Максимальна кількість 50 символів' })
+    .max(60, { message: 'Максимальна кількість 60 символів' })
     .refine(
-      value => /[^a-zA-Zа-яА-ЯєЄїЇіІ\s]/.test(value ?? ''),
-      'Це поле не має містити спеціальних символів'
-    )
-    .refine(value => /\d/.test(value ?? ''), 'Це поле не має містити цифри'),
+      value => !/[^a-zA-Zа-яА-ЯєЄїЇіІ\s]/.test(value ?? ''),
+      'Це поле не має містити символи або цифри'
+    ),
   email: z
     .string()
     .email('Невірна пошта')
@@ -198,10 +197,11 @@ export const Form = () => {
       <Button
         disabled={isSubmitting}
         variant="black"
-        className="!rounded-[20px] px-4 py-[30px] !text-base "
+        className="!rounded-[20px] px-4 py-[30px] !text-base"
+        aria-label="Відправити"
       >
         {isSubmitting ? (
-          'Надсилання...'
+          'Відправка...'
         ) : (
           <>
             Надіслати контакти

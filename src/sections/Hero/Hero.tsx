@@ -57,7 +57,6 @@ export const Hero = () => {
           height={230}
           width={230}
           priority
-          className=""
         />
       </div>
       <div className="mt-8 flex flex-col gap-y-4">

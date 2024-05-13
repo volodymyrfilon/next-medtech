@@ -1,11 +1,12 @@
 import { Socials } from '@/components/shared/Socials';
 import Link from 'next/link';
-import { FC } from 'react';
 import { Logo } from '../Logo';
 
-export const Footer: FC = () => {
+export const Footer = ({ className }: { className?: string }) => {
   return (
-    <footer className="flex flex-col gap-y-8 rounded-[30px] bg-accent-dark px-10 py-12 text-white">
+    <footer
+      className={`flex flex-col gap-y-8 rounded-[30px] bg-accent-dark px-10 py-12 text-white ${className}`}
+    >
       <Logo white animateOnHover />
       <Socials />
       {/* privacy policy & copyright*/}

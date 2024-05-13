@@ -1,7 +1,7 @@
 'use client';
 
+import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
-import { ICONS } from '../shared/icons';
 
 interface SelectOption {
   icon?: JSX.Element;
@@ -71,9 +71,7 @@ export const Select = ({
         className="absolute bottom-2.5 right-4 flex h-[70px] w-[70px] cursor-pointer items-center justify-center rounded-[20px] bg-accent-dark"
         onClick={handleClick}
       >
-        <ICONS.ARROW_DOWN
-          className={`h-8 w-8 fill-white duration-300 ${isOpen ? 'rotate-180' : ''}`}
-        />
+        <ChevronDown className={`h-6 w-6 text-white duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </div>
     </label>
   );
