@@ -71,11 +71,21 @@ const eUkraineHead = localFont({
   variable: '--font-eUkraineHead',
 });
 
+const didactGothic = localFont({
+  src: [
+    {
+      path: '../../public/fonts/DidactGothic-Regular.ttf',
+      weight: '400',
+    },
+  ],
+  variable: '--font-didactGothic',
+});
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="uk"
-      className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans  selection:bg-accent-primary/50`}
+      className={`${eUkraineHead.variable} ${eUkraine.variable} ${didactGothic.variable} font-sans  selection:bg-accent-primary/50`}
     >
       <body className="relative flex h-[300vh] flex-col">
         <Suspense fallback={<Loading />}>

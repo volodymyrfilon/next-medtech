@@ -30,28 +30,31 @@ export const MobileMenu = () => {
 
       {/* Menu */}
       <div
-        className={`fixed bottom-0 right-0 top-0 z-50 flex w-[80%] transform flex-col gap-y-8 bg-accent-dark/80 px-5 py-2.5 transition-transform duration-500 ${
+        className={`fixed bottom-0 right-0 top-0 z-50 flex w-[80%] transform flex-col gap-y-8 bg-accent-dark px-5 py-2.5 transition-transform duration-500 ${
           isOpen ? 'translate-x-0 ' : 'translate-x-full'
         }`}
       >
         {/* Close Menu Button */}
         <div className="flex items-center justify-between">
-          <Logo white />
+          <Logo white onClick={closeMenu} />
           <div
             className="flex h-0.5 w-7 cursor-pointer flex-col justify-between"
-            onClick={() => closeMenu()}
+            onClick={closeMenu}
           >
             <span className="h-0.5 w-full rotate-45 bg-white"></span>
             <span className="-mt-1 h-0.5 w-full -rotate-45 bg-white"></span>
           </div>
         </div>
         {/* Nav */}
-        <Navigation className="text-white last:border-b [&>*]:border-t [&>*]:border-white [&>*]:py-5 [&>*]:pl-5" />
+        <Navigation
+          className="text-white last:border-b [&>*]:border-t [&>*]:border-white [&>*]:py-5 [&>*]:pl-5"
+          onClick={closeMenu}
+        />
       </div>
 
       {/* Open Menu Button */}
       <div
-        className={`h-5 w-6 cursor-pointer flex-col justify-between lg:hidden ${!isOpen ? 'flex' : 'hidden'}`}
+        className={`flex h-5 w-6 cursor-pointer flex-col justify-between lg:hidden`}
         onClick={openMenu}
       >
         <span className="h-0.5 w-full bg-gray-800"></span>

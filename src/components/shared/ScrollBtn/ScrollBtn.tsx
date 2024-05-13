@@ -1,8 +1,8 @@
 'use client';
 
 import useScrollProgress from '@/hooks/useScrollProgress';
+import { CircleArrowUp } from 'lucide-react';
 import { Link as Scroll } from 'react-scroll';
-import { ICONS } from '../icons';
 
 export const ScrollBtn = () => {
   const isVisible = useScrollProgress() > 20;
@@ -15,7 +15,7 @@ export const ScrollBtn = () => {
       aria-label="Повернутися на гору"
       className={`${isVisible ? 'visible' : 'invisible'} fixed bottom-4 right-2 z-10`}
     >
-      <ICONS.ARROW_CIRCLE_UP className="h-12 w-12 fill-accent-primary" />
+      <CircleArrowUp className="h-9 w-9 stroke-accent-primary" />
     </Scroll>
   );
 };

@@ -25,7 +25,10 @@ export const Select = ({
   setValue,
 }: SelectProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selected, setSelected] = useState<SelectOption | null>(null);
+  const [selected, setSelected] = useState<SelectOption>(options[0]);
+
+  setValue(name, selected.value);
+
   const handleClick = () => setIsOpen(!isOpen);
   const onChangeSelected = (selectedOption: SelectOption) => {
     setSelected(selectedOption);

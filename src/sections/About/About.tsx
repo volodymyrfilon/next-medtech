@@ -21,7 +21,7 @@ export const About = () => {
       {aboutData.map((item, index) => (
         <div key={index} className="flex flex-col gap-y-8">
           <h3 className="text_32px font-bold text-white">{item.title}</h3>
-          <p className="font-eUkraine text-sm font-extralight text-white/70">{item.text}</p>
+          <p className="font-didactGothic text-white/70">{item.text}</p>
           <Button
             variant="white"
             className="flex w-[152px] gap-x-1"

@@ -1,37 +1,67 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Select } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Coffee, Instagram, Laptop, Send } from 'lucide-react';
+import Link from 'next/link';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { z } from 'zod';
 import { ICONS } from '../../icons';
 
-interface FormFields {
-  fullName: string;
-  email: string;
-  consultationFormat: 'online' | 'offline' | null;
-  problem: string;
-  contactVia: 'telegram' | 'instagram' | null;
-  socialNickname: string;
-  acceptTermsOfUse: boolean;
-}
+const schema = z.object({
+  fullName: z
+    .string()
+    .min(3, { message: 'Мінімальна кількість 3 символи' })
+    .max(50, { message: 'Максимальна кількість 50 символів' })
+    .refine(
+      value => /[^a-zA-Zа-яА-ЯєЄїЇіІ\s]/.test(value ?? ''),
+      'Це поле не має містити спеціальних символів'
+    )
+    .refine(value => /\d/.test(value ?? ''), 'Це поле не має містити цифри'),
+  email: z
+    .string()
+    .email('Невірна пошта')
+    .max(265, { message: 'Максимальна кількість 50 символів' }),
+  consultationFormat: z.string(),
+  problem: z
+    .string()
+    .min(10, { message: 'Мінімальна кількість 10 символів' })
+    .max(2000, { message: 'Максимальна кількість 2000 символів' }),
+  contactVia: z.string(),
+  socialNickname: z.string(),
+  acceptTermsOfUse: z.boolean(),
+});
+
+type FormFields = z.infer<typeof schema>;
+//   fullName: string;
+//   email: string;
+//   consultationFormat: 'Online' | 'Offline';
+//   problem: string;
+//   contactVia: 'Telegram' | 'Instagram';
+//   socialNickname: string;
+//   acceptTermsOfUse: boolean;
 
 const optionsContactVia = [
   {
-    icon: <ICONS.INSTAGRAM className="h-8 w-8" />,
+    icon: <Instagram className="h-5 w-5" />,
     value: 'Instagram',
   },
   {
-    icon: <ICONS.TELEGRAM className="h-8 w-8" />,
+    icon: <Send className="h-5 w-5" />,
     value: 'Telegram',
   },
 ];
 const optionsConsultationFormat = [
   {
+    icon: <Laptop className="h-5 w-5" />,
     value: 'Online',
   },
   {
+    icon: <Coffee className="h-5 w-5" />,
     value: 'Offline',
   },
 ];
@@ -42,12 +72,13 @@ export const Form = () => {
     handleSubmit,
     setError,
     setValue,
-    trigger,
-    formState: { errors, isSubmitting },
-  } = useForm<FormFields>();
+    formState: { errors, isSubmitting, isSubmitSuccessful },
+  } = useForm<FormFields>({
+    resolver: zodResolver(schema),
+  });
 
-  setValue('contactVia', null);
-  setValue('consultationFormat', null);
+  setValue('contactVia', 'Telegram');
+  setValue('consultationFormat', 'Offline');
 
   const onSubmit: SubmitHandler<FormFields> = async data => {
     try {
@@ -63,16 +94,9 @@ export const Form = () => {
       //     message: 'Будь ласка, виберіть формат консультації',
       //   });
       // }
-      if (!data.contactVia || !data.consultationFormat) {
-        setError('consultationFormat', {
-          type: 'required',
-          message: 'Будь ласка, виберіть формат консультації',
-        });
-        setError('contactVia', {
-          type: 'required',
-          message: "Будь ласка, виберіть, як з вами зв'язатися",
-        });
-      }
+      // if (!data.contactVia || !data.consultationFormat) {
+      //   return;
+      // }
 
       await new Promise(resolve => setTimeout(resolve, 800));
       console.log(data);
@@ -86,61 +110,14 @@ export const Form = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex select-none flex-col gap-y-4"
+      className="flex select-none flex-col gap-y-4 font-eUkraine"
       autoComplete="off"
     >
-      <Input
-        {...register('fullName', {
-          required: "Це поле обов'язкове",
-          validate: {
-            containsNoDigits: value => {
-              if (/\d/.test(value)) {
-                return "Ім'я не має містити цифри";
-              }
-              return true;
-            },
-            containsNoSpecialChars: value => {
-              if (/[^a-zA-Zа-яА-ЯєЄїЇіІ\s]/.test(value)) {
-                return "Ім'я не має містити спеціальних символів";
-              }
-              return true;
-            },
-          },
-          minLength: {
-            value: 3,
-            message: 'Мінімальна кількість знаків має бути 3',
-          },
-          maxLength: {
-            value: 50,
-            message: 'Максимальна кількість знаків має бути 50',
-          },
-        })}
-        type="text"
-        placeholder="Ім'я та прізвище"
-      />
+      <Input {...register('fullName')} type="text" placeholder="Ім'я та прізвище" />
       {errors.fullName && <span className="-mt-3 text-red-500">{errors.fullName.message}</span>}
-      <Input
-        {...register('email', {
-          required: "Це поле обов'язкове",
-          validate: value => {
-            if (!value.includes('@')) {
-              return 'Пошта має мати символ @';
-            }
-            return true;
-          },
-          minLength: {
-            value: 4,
-            message: 'Мінімальна кількість знаків має бути 4',
-          },
-          maxLength: {
-            value: 256,
-            message: 'Максимальна кількість знаків має бути 256',
-          },
-        })}
-        type="email"
-        placeholder="Email"
-      />
+      <Input {...register('email')} type="email" placeholder="Email" />
       {errors.email && <span className="-mt-3 text-red-500">{errors.email.message}</span>}
+
       <Select
         title="Який формат консультації Вас цікавить?"
         name={'consultationFormat'}
@@ -154,17 +131,7 @@ export const Form = () => {
 
       <Textarea
         placeholder="Опишіть детально свій запит чи проблему та яка послуга Вас цікавить.."
-        register={register('problem', {
-          required: "Це поле обов'язкове",
-          minLength: {
-            value: 10,
-            message: 'Мінімальна кількість знаків має бути 10',
-          },
-          maxLength: {
-            value: 800,
-            message: 'Максимальна кількість знаків має бути 800',
-          },
-        })}
+        register={register('problem')}
       />
       {errors.problem && <span className="-mt-3 text-red-500">{errors.problem.message}</span>}
 
@@ -199,6 +166,34 @@ export const Form = () => {
       {errors.socialNickname && (
         <span className="-mt-3 text-red-500">{errors.socialNickname.message}</span>
       )}
+      <div
+        className="items-top flex space-x-2"
+        {...register('acceptTermsOfUse', {
+          required: "Це поле обов'язкове",
+        })}
+      >
+        <Checkbox id="terms" />
+        <div className="grid gap-1.5 leading-none">
+          <label
+            htmlFor="terms"
+            className="rounded text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Прийняти умови користування та політику конфіденційності
+          </label>
+          <p className="font-eUkraine text-sm font-light text-accent-dark/50">
+            Я погоджуюсь з{' '}
+            <Link
+              className="underline hover:text-accent-primary focus:text-accent-primary"
+              href="/privacy-policy"
+            >
+              Умовами Користування та Політикою Конфіденційності
+            </Link>
+          </p>
+        </div>
+      </div>
+      {errors.acceptTermsOfUse && (
+        <span className="-mt-3 text-red-500">{errors.acceptTermsOfUse.message}</span>
+      )}
 
       <Button
         disabled={isSubmitting}
@@ -215,20 +210,7 @@ export const Form = () => {
         )}
       </Button>
       {errors.root && <span className="text-red-500">{errors.root.message}</span>}
+      {isSubmitSuccessful && <span className="text-green-500">Успішно відправлено!</span>}
     </form>
   );
 };
-
-{
-  /* <Checkbox
-        register={register('acceptTermsOfUse', {
-          required: 'ededwwedf',
-        })}
-        title="Прийняти умови та політику конфіденційності"
-      >
-        Ви погоджуєтеся з Умовами Користування та Політикою Конфіденційності
-      </Checkbox>
-      {errors.acceptTermsOfUse && (
-        <span className="text-red-500">{errors.acceptTermsOfUse.message}</span>
-      )} */
-}

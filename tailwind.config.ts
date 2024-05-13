@@ -2,10 +2,6 @@ import type { Config } from 'tailwindcss';
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    container: {
-      center: true,
-      padding: '32px',
-    },
     screens: {
       xs: '360px',
       sm: '480px',
@@ -39,6 +35,7 @@ const config: Config = {
       fontFamily: {
         eUkraine: ['var(--font-eUkraine)'],
         eUkraineHead: ['var(--font-eUkraineHead)'],
+        didactGothic: ['var(--font-didactGothic)'],
       },
       animation: {
         text: 'text 3s ease infinite',

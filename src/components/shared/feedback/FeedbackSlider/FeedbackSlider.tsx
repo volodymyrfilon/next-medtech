@@ -12,6 +12,7 @@ export const FeedbackSlider = ({
   data,
 }: {
   data: {
+    category?: string;
     feedback: string;
   }[];
 }) => {
@@ -25,8 +26,9 @@ export const FeedbackSlider = ({
 
   return (
     <div className="relative mt-[72px]">
-      <div className="absolute -top-[62px] left-1/2 z-10 -translate-x-1/2 text-lg font-extralight">
-        {currentIndex + 1}/{totalSlides}
+      <div className="font-didactGothic absolute -top-[62px] left-1/2 z-10 -translate-x-1/2 text-lg">
+        {currentIndex + 1}
+        <span className="opacity-70">/{totalSlides}</span>
       </div>
       <Swiper
         id="feedbackSlider"
@@ -47,7 +49,7 @@ export const FeedbackSlider = ({
         {/* slides */}
         {data.map((item, index) => (
           <SwiperSlide key={index}>
-            <FeedbackCard data={item.feedback} />
+            <FeedbackCard data={item} />
           </SwiperSlide>
         ))}
       </Swiper>

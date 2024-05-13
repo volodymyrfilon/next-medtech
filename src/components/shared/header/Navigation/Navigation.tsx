@@ -1,10 +1,17 @@
 import Link from 'next/link';
 
-export const Navigation = ({ className }: { className?: string }) => {
+export const Navigation = ({
+  className,
+  onClick,
+}: {
+  className?: string;
+  onClick?: () => void;
+}) => {
   return (
     <nav>
       <ol
-        className={`flex flex-col gap-x-8 text-sm lg:flex-row hover:[&>*]:underline ${className}`}
+        className={`font-didactGothic flex flex-col gap-x-8 lg:flex-row hover:[&>*]:underline ${className}`}
+        onClick={onClick}
       >
         <li>
           <Link href="#">Про мене</Link>

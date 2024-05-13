@@ -1,14 +1,14 @@
+import { Instagram, Send } from 'lucide-react';
 import Link from 'next/link';
-import { ICONS } from '../icons';
 
 export const Socials = ({ className = '' }: { className?: string }) => {
   return (
     <div className={`flex w-full gap-x-4 ${className}`}>
       <Link href="https://www.instagram.com/julisadhu_/" rel="nofollow noreffer" target="_blank">
-        <ICONS.INSTAGRAM className="h-10 w-10 fill-white hover:fill-accent-primary" />
+        <Instagram className="h-7 w-7 stroke-white hover:stroke-accent-primary" />
       </Link>
       <Link href="https://t.me/logvinenko_315" rel="nofollow noreffer" target="_blank">
-        <ICONS.TELEGRAM className="h-10 w-10 fill-white hover:fill-accent-primary" />
+        <Send className="h-7 w-7 stroke-white hover:stroke-accent-primary" />
       </Link>
     </div>
   );

@@ -1,53 +1,28 @@
-import { ReactNode, useState } from 'react';
-import { UseFormRegisterReturn } from 'react-hook-form';
+'use client';
 
-interface CheckboxProps {
-  className?: string;
-  register: UseFormRegisterReturn;
-  disabled?: boolean;
-  title?: string;
-  children?: ReactNode;
-}
+import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
+import { Check } from 'lucide-react';
+import * as React from 'react';
 
-export const Checkbox = ({
-  className = '',
-  register,
-  disabled = false,
-  title,
-  children,
-}: CheckboxProps) => {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
+import { cn } from '@/lib/utils';
 
-  return (
-    <div className="flex items-start">
-      <div
-        onClick={() => setIsChecked(!isChecked)}
-        className={`ring-offset-background focus-visible:ring-ring peer h-6 w-6 flex-shrink-0 rounded bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
-      >
-        <input type="checkbox" className="hidden" {...register} disabled={disabled} />
-        <div
-          className={`flex items-center justify-center rounded text-current ${disabled ? 'opacity-50' : ''} ${isChecked ? 'bg-accent-primary' : ''}`}
-        >
-          <svg
-            className={`h-6 w-6 `}
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5 13L9 17L19 7"
-              stroke="#fff"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      </div>
-      <div className="ml-2">
-        <div className="font-medium">{title}</div>
-        <div className="font-eUkraine text-sm font-light opacity-70">{children}</div>
-      </div>
-    </div>
-  );
-};
+const Checkbox = React.forwardRef<
+  React.ElementRef<typeof CheckboxPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <CheckboxPrimitive.Root
+    ref={ref}
+    className={cn(
+      'ring-offset-background focus-visible:ring-ring peer h-6 w-6 shrink-0 rounded bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-accent-primary data-[state=checked]:text-accent-dark',
+      className
+    )}
+    {...props}
+  >
+    <CheckboxPrimitive.Indicator className={cn('flex items-center justify-center text-current')}>
+      <Check className="h-6 w-6 rounded bg-accent-primary text-white" />
+    </CheckboxPrimitive.Indicator>
+  </CheckboxPrimitive.Root>
+));
+Checkbox.displayName = CheckboxPrimitive.Root.displayName;
+
+export { Checkbox };
