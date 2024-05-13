@@ -103,6 +103,10 @@ body {
 .swiper.feedbackSlider .swiper-button-next:hover {
   opacity: 0.7;
 }
+.swiper.feedbackSlider .swiper-button-prev:active,
+.swiper.feedbackSlider .swiper-button-next:active {
+  transform: scale(80%);
+}
 .swiper.feedbackSlider .swiper-button-prev {
   right: calc(50% + 32px);
   top: -50px;

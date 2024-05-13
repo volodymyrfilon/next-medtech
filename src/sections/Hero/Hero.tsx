@@ -1,7 +1,7 @@
 import { Title } from '@/components/shared/Title';
-import { ICONS } from '@/components/shared/icons';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { ChevronRight, Plus } from 'lucide-react';
 import Image from 'next/image';
 import { ReactNode } from 'react';
 
@@ -19,28 +19,28 @@ const services: ServiceProps[] = [
     variant: 'gray',
     title: 'Цвяхотерапія',
     link: '/',
-    icon: <ICONS.ADD className="h-6 w-6 fill-accent-dark" />,
+    icon: <Plus className="h-5 w-5 text-accent-dark" />,
   },
   {
     buttonClassName: 'border border-accent-dark/10 focus:outline-accent-dark/10',
     variant: 'gray',
     title: 'Розбір Матриці Долі',
     link: '/',
-    icon: <ICONS.ADD className="h-6 w-6 fill-accent-dark" />,
+    icon: <Plus className="h-5 w-5 text-accent-dark" />,
   },
   {
     buttonClassName: 'border border-accent-dark/10 focus:outline-accent-dark/10',
     variant: 'gray',
     title: 'МАК-карти',
     link: '/',
-    icon: <ICONS.ADD className="h-6 w-6 fill-accent-dark" />,
+    icon: <Plus className="h-5 w-5 text-accent-dark" />,
   },
   {
     buttonClassName: 'bg-white',
     variant: 'primary',
     title: 'Записатися на консультацію',
     link: '/',
-    icon: <ICONS.ARROW_RIGHT className="h-6 w-6 fill-accent-dark" />,
+    icon: <ChevronRight className="h-5 w-5 text-accent-dark" />,
   },
 ];
 
@@ -50,7 +50,7 @@ export const Hero = () => {
       <Title h1>
         Нумеролог та цвяхотерапевт <span className="text-accent-primary">Юлія Логвиненко</span>
       </Title>
-      <div className="bg-matrix-layer bg-accent-gray mt-6 flex h-[342px] w-80 items-end justify-center rounded-[30px] bg-contain bg-center bg-no-repeat ">
+      <div className="mt-6 flex h-[342px] w-80 items-end justify-center rounded-[30px] bg-accent-gray bg-matrix-layer bg-contain bg-center bg-no-repeat ">
         <Image
           src="/images/hero/author.png"
           alt="Image of author"

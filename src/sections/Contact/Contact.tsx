@@ -4,9 +4,9 @@ import { Footer } from '@/layout/Footer';
 
 export const Contact = () => {
   return (
-    <section className="flex flex-col gap-y-8">
+    <section className="flex flex-col gap-y-8" id="contact">
       <Title>Записатися на консультацію</Title>
-      <div className="bg-accent-gray rounded-[30px] px-5 py-12">
+      <div className="rounded-[30px] bg-accent-gray px-5 py-12">
         <Form />
       </div>
       <Footer />

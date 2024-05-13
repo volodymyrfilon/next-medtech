@@ -1,5 +1,5 @@
-import { ICONS } from '@/components/shared/icons';
 import { Button } from '@/components/ui/button';
+import { ChevronRight } from 'lucide-react';
 
 const aboutData: { title: string; text: string }[] = [
   {
@@ -28,7 +28,7 @@ export const About = () => {
             aria-label={`Докладніше ${item.title}`}
           >
             Докладніше
-            <ICONS.ARROW_RIGHT className="h-6 w-6" />
+            <ChevronRight className="h-5 w-5 text-accent-dark" />
           </Button>
         </div>
       ))}
