@@ -1,78 +1,88 @@
 'use client';
 
-import { ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import * as SelectPrimitive from '@radix-ui/react-select';
+import { Check, ChevronDown } from 'lucide-react';
+import * as React from 'react';
 
-interface SelectOption {
-  icon?: JSX.Element;
-  value: string;
-}
-interface SelectProps {
-  className?: string;
-  name: string;
-  title?: string;
-  placeholder?: string;
-  options: SelectOption[];
-  setValue: (name: string, value: string) => void;
-}
+import { cn } from '@/lib/utils';
 
-export const Select = ({
-  className = '',
-  title,
-  options,
-  name,
-  placeholder,
-  setValue,
-}: SelectProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selected, setSelected] = useState<SelectOption>(options[0]);
+const Select = SelectPrimitive.Root;
 
-  setValue(name, selected.value);
+const SelectGroup = SelectPrimitive.Group;
 
-  const handleClick = () => setIsOpen(!isOpen);
-  const onChangeSelected = (selectedOption: SelectOption) => {
-    setSelected(selectedOption);
-    setValue(name, selectedOption.value);
-    setIsOpen(false);
-  };
+const SelectValue = SelectPrimitive.Value;
 
-  return (
-    <label className="relative">
-      <span className="block w-[90%]">{title}</span>
-      <div
-        id={name}
-        className={`mt-1 flex h-[88px] items-center gap-x-4 rounded-[20px] bg-white p-2.5 pl-4 leading-[68px] ${className} ${selected === null ? ' font-medium text-accent-dark/40' : ''} ${isOpen ? 'outline outline-2 outline-accent-primary' : ''}`}
-      >
-        {selected ? (
-          <>
-            {selected.icon}
-            {selected.value}
-          </>
-        ) : (
-          placeholder
-        )}
-        {isOpen && (
-          <ul className="bg-accent absolute z-10 flex w-full -translate-x-4 translate-y-[85%] cursor-pointer flex-col rounded-[20px] border-2 bg-white font-normal text-accent-dark">
-            {options.map(option => (
-              <li
-                key={option.value}
-                onClick={() => onChangeSelected(option)}
-                className={`flex items-center justify-start gap-x-4 px-4 first:rounded-t-[20px] last:rounded-b-[20px] hover:bg-accent-dark/20 ${
-                  selected === option ? 'bg-accent-dark/30' : ''
-                }`}
-              >
-                {option.icon} {option.value}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-      <div
-        className="absolute bottom-2.5 right-4 flex h-[70px] w-[70px] cursor-pointer items-center justify-center rounded-[20px] bg-accent-dark"
-        onClick={handleClick}
-      >
-        <ChevronDown className={`h-6 w-6 text-white duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-      </div>
-    </label>
-  );
-};
+const SelectTrigger = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
+>(({ className, children, ...props }, ref) => (
+  <SelectPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      '[&>span]:line-clamp-1c flex h-20 w-full items-center justify-between rounded-[20px] bg-white pl-4 pr-2.5 text-sm outline-2 placeholder:text-accent-dark/50 focus:outline-accent-primary disabled:cursor-not-allowed disabled:opacity-50 ',
+      className
+    )}
+    {...props}
+  >
+    {children}
+    <SelectPrimitive.Icon asChild>
+      <ChevronDown className="h-6 w-6 opacity-70" />
+    </SelectPrimitive.Icon>
+  </SelectPrimitive.Trigger>
+));
+SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
+
+const SelectContent = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
+>(({ className, children, position = 'popper', ...props }, ref) => (
+  <SelectPrimitive.Portal>
+    <SelectPrimitive.Content
+      ref={ref}
+      className={cn(
+        'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-96 w-full overflow-hidden rounded-[20px] border bg-white text-accent-dark shadow-md',
+        position === 'popper' &&
+          'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
+        className
+      )}
+      position={position}
+      {...props}
+    >
+      <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
+    </SelectPrimitive.Content>
+  </SelectPrimitive.Portal>
+));
+SelectContent.displayName = SelectPrimitive.Content.displayName;
+
+const SelectLabel = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Label>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.Label ref={ref} className={cn('text-sm', className)} {...props} />
+));
+SelectLabel.displayName = SelectPrimitive.Label.displayName;
+
+const SelectItem = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
+>(({ className, children, ...props }, ref) => (
+  <SelectPrimitive.Item
+    ref={ref}
+    className={cn(
+      'relative flex h-[60px] w-[280px] cursor-default select-none items-center py-2 pl-8 pr-2 text-sm outline-none first:rounded-t-[20px] last:rounded-b-[20px] focus:bg-accent-primary/70 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      className
+    )}
+    {...props}
+  >
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <SelectPrimitive.ItemIndicator>
+        <Check className="h-5 w-5 opacity-70" />
+      </SelectPrimitive.ItemIndicator>
+    </span>
+
+    <SelectPrimitive.ItemText className="">{children}</SelectPrimitive.ItemText>
+  </SelectPrimitive.Item>
+));
+SelectItem.displayName = SelectPrimitive.Item.displayName;
+
+export { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue };
