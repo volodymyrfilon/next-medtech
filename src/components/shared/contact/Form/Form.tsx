@@ -36,7 +36,7 @@ const schema = z.object({
   consultationFormat: z.string({ required_error: "Це поле обов'язкове" }),
   problem: z
     .string()
-    .min(10, { message: 'Мінімальна кількість 10 символів' })
+    .min(8, { message: 'Мінімальна кількість 8 символів' })
     .max(2000, { message: 'Максимальна кількість 2000 символів' }),
   contactVia: z.string({ required_error: "Це поле обов'язкове" }),
   socialNickname: z
@@ -45,9 +45,8 @@ const schema = z.object({
     .refine(value => /^[a-zA-Z0-9_.]*$/.test(value ?? ''), {
       message: 'Це поле може містити тільки цифри, латинські літери, крапки та підкреслення',
     }),
-
   isLegal: z.coerce.boolean().refine(bool => bool == true, {
-    message: 'You must agree to our terms and conditions',
+    message: 'Треба згода з нашими умовами та положеннями',
   }),
 });
 
@@ -207,24 +206,32 @@ export const Form = () => {
       />
 
       <div className="items-top flex space-x-2">
-        <Checkbox id="terms" {...register('isLegal')} />
-        <div className="grid gap-1.5 leading-none">
-          <label
-            htmlFor="terms"
-            className="rounded text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Прийняти умови користування та політику конфіденційності
-          </label>
-          <p className="font-eUkraine text-sm font-light text-accent-dark/50">
-            Я погоджуюсь з{' '}
-            <Link
-              className="underline hover:text-accent-primary focus:text-accent-primary"
-              href="/privacy-policy"
-            >
-              Умовами Користування та Політикою Конфіденційності
-            </Link>
-          </p>
-        </div>
+        <Controller
+          name="isLegal"
+          control={control}
+          render={({ field }) => (
+            <>
+              <Checkbox id="isLegal" checked={field.value} onCheckedChange={field.onChange} />
+              <div className="grid gap-1.5 leading-none">
+                <label
+                  htmlFor="terms"
+                  className="rounded text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  Прийняти умови користування та політику конфіденційності
+                </label>
+                <p className="font-eUkraine text-sm font-light text-accent-dark/50">
+                  Я погоджуюсь з{' '}
+                  <Link
+                    className="underline hover:text-accent-primary focus:text-accent-primary"
+                    href="/privacy-policy"
+                  >
+                    Умовами Користування та Політикою Конфіденційності
+                  </Link>
+                </p>
+              </div>
+            </>
+          )}
+        />
       </div>
       {errors.isLegal && (
         <span className="-mt-3 text-sm text-red-500">{errors.isLegal.message}</span>
