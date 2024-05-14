@@ -12,12 +12,12 @@ export const FeedbackCard = ({
   };
 }) => {
   return (
-    <div className="relative flex min-h-[570px] select-none flex-col items-center gap-y-6 rounded-[30px] bg-accent-gray px-8 py-16">
+    <div className="relative flex min-h-[570px] select-none flex-col items-center gap-y-6 rounded-[30px] bg-accent-gray px-8 py-16 sm:min-h-[460px]">
       <ICONS.QUOTE className="absolute left-8 top-8 w-7 fill-accent-primary" />
-      <div className="font-didactGothic flex items-center justify-center gap-x-2 rounded-[20px] bg-accent-primary/70 px-2.5 py-1.5 text-white">
+      <div className="flex items-center justify-center gap-x-2 rounded-[20px] bg-accent-primary/70 px-2.5 py-1.5 font-didactGothic text-white">
         {data.category}
       </div>
-      <p className="font-didactGothic text-center opacity-70">{data.feedback}</p>
+      <p className="text-center font-didactGothic opacity-70">{data.feedback}</p>
       <Link
         href="https://www.instagram.com/julisadhu_/"
         rel="nofollow noreffer"

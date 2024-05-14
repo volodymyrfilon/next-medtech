@@ -11,6 +11,7 @@ interface ServiceProps {
   title: string;
   link: string;
   icon: ReactNode;
+  layer?: string;
 }
 
 const services: ServiceProps[] = [
@@ -20,6 +21,7 @@ const services: ServiceProps[] = [
     title: 'Цвяхотерапія',
     link: '/',
     icon: <Plus className="h-5 w-5 text-accent-dark" />,
+    // layer: 'bg-sadhu-layer',
   },
   {
     buttonClassName: 'border border-accent-dark/10 focus:outline-accent-dark/10',
@@ -27,6 +29,7 @@ const services: ServiceProps[] = [
     title: 'Розбір Матриці Долі',
     link: '/',
     icon: <Plus className="h-5 w-5 text-accent-dark" />,
+    // layer: 'bg-matrix-layer',
   },
   {
     buttonClassName: 'border border-accent-dark/10 focus:outline-accent-dark/10',
@@ -34,6 +37,7 @@ const services: ServiceProps[] = [
     title: 'МАК-карти',
     link: '/',
     icon: <Plus className="h-5 w-5 text-accent-dark" />,
+    // layer: 'bg-cards-layer',
   },
   {
     buttonClassName: 'bg-white',
@@ -50,7 +54,7 @@ export const Hero = () => {
       <Title h1>
         Нумеролог та цвяхотерапевт <span className="text-accent-primary">Юлія Логвиненко</span>
       </Title>
-      <div className="mt-6 flex h-[342px] w-80 items-end justify-center rounded-[30px] bg-accent-gray bg-matrix-layer bg-contain bg-center bg-no-repeat">
+      <div className="mt-6 flex h-[342px] w-full items-end justify-center rounded-[30px] bg-accent-gray bg-matrix-layer bg-contain bg-center bg-no-repeat sm:h-[400px]">
         <Image
           src="/images/hero/author.webp"
           alt="Image of author"
@@ -62,7 +66,13 @@ export const Hero = () => {
       </div>
       <div className="mt-8 flex flex-col gap-y-4">
         {services.map((service, index) => (
-          <Card variant={service.variant} title={service.title} link={service.link} key={index}>
+          <Card
+            variant={service.variant}
+            title={service.title}
+            link={service.link}
+            key={index}
+            className={`bg-cover bg-center bg-no-repeat ${service.layer}`}
+          >
             <Button variant="icon" className={service.buttonClassName} aria-label={service.title}>
               {service.icon}
             </Button>

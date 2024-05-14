@@ -25,7 +25,7 @@ const FeedbackVideo = ({ className }: FeedbackVideoProps) => {
 
   return (
     <div
-      className={`relative flex h-[384px] w-full items-center justify-center rounded-[30px] bg-gray-500 ${className}`}
+      className={`relative flex h-[384px] w-full items-center justify-center rounded-[30px] bg-gray-500 sm:h-[520px] ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
