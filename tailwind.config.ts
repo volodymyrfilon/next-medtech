@@ -21,9 +21,7 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        'matrix-layer': 'url("/images/hero/matrix.png")',
-        'mac-cards-layer': 'url("/images/hero/mac-cards.png")',
-        'sadhu-layer': 'url("/images/hero/sadhu.png")',
+        'matrix-layer': 'url("/images/hero/matrix.webp")',
       },
       colors: {
         accent: {

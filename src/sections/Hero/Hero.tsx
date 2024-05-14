@@ -50,13 +50,14 @@ export const Hero = () => {
       <Title h1>
         Нумеролог та цвяхотерапевт <span className="text-accent-primary">Юлія Логвиненко</span>
       </Title>
-      <div className="mt-6 flex h-[342px] w-80 items-end justify-center rounded-[30px] bg-accent-gray bg-matrix-layer bg-contain bg-center bg-no-repeat ">
+      <div className="mt-6 flex h-[342px] w-80 items-end justify-center rounded-[30px] bg-accent-gray bg-matrix-layer bg-contain bg-center bg-no-repeat">
         <Image
-          src="/images/hero/author.png"
+          src="/images/hero/author.webp"
           alt="Image of author"
-          height={230}
-          width={230}
+          height={240}
+          width={240}
           priority
+          className="h-auto"
         />
       </div>
       <div className="mt-8 flex flex-col gap-y-4">

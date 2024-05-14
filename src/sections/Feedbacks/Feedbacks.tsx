@@ -1,5 +1,6 @@
 import { Title } from '@/components/shared/Title';
 import { FeedbackSlider } from '@/components/shared/feedback/FeedbackSlider';
+import FeedbackVideo from '@/components/shared/feedback/FeedbackVideo/FeedbackVideo';
 
 const data = [
   {
@@ -43,10 +44,7 @@ export const Feedbacks = () => {
   return (
     <section id="feedback" className="flex flex-col gap-y-8 overflow-x-hidden">
       <Title>Результати клієнтів</Title>
-      <div className="flex h-[384px] w-full items-center justify-center rounded-[30px] bg-gray-500">
-        IMAGE / VIDEO
-      </div>
-
+      <FeedbackVideo />
       <FeedbackSlider data={data} />
     </section>
   );
