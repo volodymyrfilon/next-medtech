@@ -40,13 +40,14 @@ const schema = z.object({
     .max(2000, { message: 'Максимальна кількість 2000 символів' }),
   contactVia: z.string({ required_error: "Це поле обов'язкове" }),
   socialNickname: z
-    .string({ required_error: "Це поле обов'язкове" })
+    .string()
+    .min(3, { message: 'Мінімальна кількість 3 символи' })
     .max(60, { message: 'Максимальна кількість 60 символів' })
     .refine(value => /^[a-zA-Z0-9_.]*$/.test(value ?? ''), {
       message: 'Це поле може містити тільки цифри, латинські літери, крапки та підкреслення',
     }),
   isLegal: z.coerce.boolean().refine(bool => bool == true, {
-    message: 'Треба згода з нашими умовами та положеннями',
+    message: 'Необхідна згода з нашими умовами та політикою',
   }),
 });
 

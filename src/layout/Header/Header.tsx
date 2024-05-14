@@ -4,7 +4,7 @@ import { Logo } from '../Logo';
 
 export const Header = () => {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between border-b bg-white/50 px-5 font-eUkraine font-light">
+    <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between border-b bg-white/95 px-5 font-eUkraine font-light">
       <Logo animateOnHover />
       <Navigation className="hidden lg:flex" />
       <MobileMenu />

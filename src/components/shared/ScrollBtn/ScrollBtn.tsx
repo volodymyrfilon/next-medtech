@@ -13,9 +13,9 @@ export const ScrollBtn = ({ link = undefined }: { link?: string }) => {
       smooth={true}
       duration={300}
       aria-label="Повернутися на гору"
-      className={`${isVisible ? 'visible' : 'invisible'} fixed bottom-4 right-2 z-10`}
+      className={`${isVisible ? 'visible' : 'invisible'} fixed bottom-5 right-5 z-30`}
     >
-      <CircleArrowUp className="h-9 w-9 stroke-accent-primary" />
+      <CircleArrowUp className="h-10 w-10 stroke-accent-primary" />
     </Scroll>
   );
 };

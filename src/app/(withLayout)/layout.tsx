@@ -5,8 +5,10 @@ const WithLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Header />
-      <main className="mt-16 flex flex-col gap-y-8 px-5">{children}</main>
-      <ScrollBtn />
+      <main className="mt-16 flex flex-col gap-y-8 px-5">
+        {children}
+        <ScrollBtn />
+      </main>
     </>
   );
 };
