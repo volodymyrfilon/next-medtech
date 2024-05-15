@@ -48,30 +48,44 @@ const services: ServiceProps[] = [
   },
 ];
 
+// .parent 1280px {
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   grid-template-rows: repeat(2, 1fr);
+//   grid-column-gap: 0px;
+//   grid-row-gap: 0px;
+//   }
+
+//   .div1 { grid-area: 1 / 1 / 4 / 2; }
+//   .div2 { grid-area: 1 / 2 / 2 / 3; }
+//   .div3 { grid-area: 2 / 2 / 3 / 3; }
+
 export const Hero = () => {
   return (
-    <section id="hero" className="mt-8">
-      <Title h1>
+    <section
+      id="hero"
+      className="mt-8 grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 xl:grid-rows-2"
+    >
+      <Title h1 className="w-full md:pl-10 md:pt-10 md:text-left xl:pl-20">
         Нумеролог та цвяхотерапевт <span className="text-accent-primary">Юлія Логвиненко</span>
       </Title>
-      <div className="mt-6 flex h-[342px] w-full items-end justify-center rounded-[30px] bg-accent-gray bg-matrix-layer bg-contain bg-center bg-no-repeat sm:h-[400px]">
+      <div className="relative flex h-[342px] w-full items-end justify-center rounded-[30px] bg-accent-gray bg-matrix-layer bg-contain bg-center bg-no-repeat sm:h-[400px] md:row-span-full md:h-[438px] lg:h-[570px] xl:row-span-full xl:h-full">
         <Image
           src="/images/hero/author.webp"
           alt="Image of author"
-          height={240}
-          width={240}
+          fill
           priority
-          className="h-auto"
+          className="w-auto object-contain"
         />
       </div>
-      <div className="mt-8 flex flex-col gap-y-4">
+      <div className="col-span-full grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 xl:col-span-1 xl:grid-cols-2 xl:grid-rows-2">
         {services.map((service, index) => (
           <Card
             variant={service.variant}
             title={service.title}
             link={service.link}
             key={index}
-            className={`bg-cover bg-center bg-no-repeat ${service.layer}`}
+            className={`w-full bg-cover bg-center bg-no-repeat md:h-52 ${service.layer}`}
           >
             <Button variant="icon" className={service.buttonClassName} aria-label={service.title}>
               {service.icon}
