@@ -1,6 +1,13 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import emailjs from '@emailjs/browser';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Coffee, Instagram, Laptop, Send } from 'lucide-react';
+import Link from 'next/link';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { z } from 'zod';
+
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import {
@@ -13,11 +20,6 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Coffee, Instagram, Laptop, Send } from 'lucide-react';
-import Link from 'next/link';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { z } from 'zod';
 import { ICONS } from '../../icons';
 
 const schema = z.object({
@@ -80,15 +82,28 @@ export const Form = ({ className }: { className?: string }) => {
     handleSubmit,
     setError,
     control,
+    getValues,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<FormFields>({
     resolver: zodResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<FormFields> = async data => {
+  const onSubmit: SubmitHandler<FormFields> = data => {
     try {
-      await new Promise(resolve => setTimeout(resolve, 800));
-      console.log(data);
+      const EMAIL_JS_SERVICE_ID = process.env.EMAIL_JS_SERVICE_ID || 'service_j8r5h38';
+      const EMAIL_JS_TEMPLATE_ID = process.env.EMAIL_JS_TEMPLATE_ID || 'template_7jx2b3h';
+      const EMAIL_JS_PUBLIC_KEY = process.env.EMAIL_JS_PUBLIC_KEY || '0plltW8PYgxE3m6KW';
+
+      const formParams = {
+        fullName: data.fullName,
+        email: data.email,
+        consultationFormat: data.consultationFormat,
+        problem: data.problem,
+        contactVia: data.contactVia,
+        socialNickname: data.socialNickname,
+      };
+
+      emailjs.send(EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID, formParams, EMAIL_JS_PUBLIC_KEY);
     } catch (error) {
       setError('root', {
         message: 'Вибачте, сталася помилка. Будь ласка, спробуйте знову пізніше.',

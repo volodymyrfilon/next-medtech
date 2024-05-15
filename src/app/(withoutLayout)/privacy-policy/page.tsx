@@ -150,10 +150,10 @@ const page = () => {
             </div>
             <Link
               rel="nofollow noreferrer"
-              href="mailto:example@gmail.com"
+              href="mailto:julia.lohvynenko.psychology@gmail.com"
               className="text-sm font-semibold leading-6 text-black/60 hover:text-accent-primary focus:text-accent-primary md:text-base"
             >
-              example@gmail.com
+              julia.lohvynenko.psychology@gmail.com
             </Link>
           </div>
         </div>

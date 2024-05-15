@@ -35,9 +35,9 @@ const FeedbackVideo = ({ className }: FeedbackVideoProps) => {
       </video>
       <button
         onClick={handlePlayPause}
-        className={`absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-primary p-2 text-white transition-opacity duration-300 ${
-          isPlaying ? 'lg:opacity-0 lg:hover:opacity-100' : 'lg:opacity-100'
-        }`}
+        aria-label="Play/Pause video"
+        className={`absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-primary p-2 text-white transition-opacity duration-300
+         ${isPlaying && !isHovered ? 'lg:opacity-0 lg:hover:opacity-100' : 'lg:opacity-100'}`}
       >
         {isPlaying ? <CirclePause className="h-8 w-8" /> : <CirclePlay className="h-8 w-8" />}
       </button>
