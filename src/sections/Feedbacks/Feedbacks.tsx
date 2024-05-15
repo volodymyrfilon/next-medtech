@@ -42,10 +42,15 @@ const data = [
 
 export const Feedbacks = () => {
   return (
-    <section id="feedback" className="flex flex-col gap-y-8 overflow-x-hidden">
-      <Title>Результати клієнтів</Title>
-      <FeedbackVideo />
-      <FeedbackSlider data={data} />
+    <section
+      id="feedback"
+      className="grid grid-cols-1 gap-x-5 gap-y-8 overflow-x-hidden md:grid-cols-2 md:grid-rows-2 xl:grid-cols-5"
+    >
+      <Title className="md:col-start-2 md:pl-10 md:pt-10 md:text-left xl:col-start-3">
+        Результати клієнтів
+      </Title>
+      <FeedbackVideo className="row-span-1 h-[384px] w-full sm:h-[520px] md:row-start-1 lg:row-span-full lg:!h-full xl:col-span-2" />
+      <FeedbackSlider data={data} className="md:col-span-full lg:col-span-1 xl:col-span-3" />
     </section>
   );
 };

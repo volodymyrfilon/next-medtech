@@ -10,7 +10,11 @@ import 'swiper/css/navigation';
 
 export const FeedbackSlider = ({
   data,
+  className,
+  isAutoplay = false,
 }: {
+  isAutoplay?: boolean;
+  className?: string;
   data: {
     category?: string;
     feedback: string;
@@ -25,8 +29,8 @@ export const FeedbackSlider = ({
   };
 
   return (
-    <div className="relative mt-[72px]">
-      <div className="font-didactGothic absolute -top-[62px] left-1/2 z-10 -translate-x-1/2 text-lg">
+    <div className={`relative mt-[72px] md:mt-0 ${className}`}>
+      <div className="absolute -top-[62px] left-1/2 z-10 -translate-x-1/2 font-didactGothic text-lg md:hidden">
         {currentIndex + 1}
         <span className="opacity-70">/{totalSlides}</span>
       </div>
@@ -34,14 +38,14 @@ export const FeedbackSlider = ({
         id="feedbackSlider"
         className="feedbackSlider"
         slidesPerView={1}
-        spaceBetween={32}
+        spaceBetween={48}
         modules={[Autoplay, Navigation]}
         allowTouchMove={true}
         grabCursor={true}
         navigation={true}
         speed={1000}
-        autoplay={{ delay: 2000, disableOnInteraction: true }}
-        // autoplay={false}
+        autoplay={isAutoplay ? { delay: 2000, disableOnInteraction: true } : false}
+        // autoplay={ false}
         lazyPreloadPrevNext={1}
         onSlideChange={handleSlideChange}
         style={{ overflow: 'hidden' }}

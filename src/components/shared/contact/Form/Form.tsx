@@ -74,7 +74,7 @@ const optionsConsultationFormat = [
   },
 ];
 
-export const Form = () => {
+export const Form = ({ className }: { className?: string }) => {
   const {
     register,
     handleSubmit,
@@ -87,22 +87,6 @@ export const Form = () => {
 
   const onSubmit: SubmitHandler<FormFields> = async data => {
     try {
-      // if (data.contactVia === null) {
-      //   setError('contactVia', {
-      //     type: 'required',
-      //     message: "Будь ласка, виберіть, як з вами зв'язатися",
-      //   });
-      // }
-      // if (!data.consultationFormat) {
-      //   setError('consultationFormat', {
-      //     type: 'required',
-      //     message: 'Будь ласка, виберіть формат консультації',
-      //   });
-      // }
-      // if (!data.contactVia || !data.consultationFormat) {
-      //   return;
-      // }
-
       await new Promise(resolve => setTimeout(resolve, 800));
       console.log(data);
     } catch (error) {
@@ -115,7 +99,7 @@ export const Form = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex select-none flex-col gap-y-4 font-eUkraine font-light"
+      className={`flex select-none flex-col gap-y-4 font-eUkraine font-light ${className}`}
       autoComplete="off"
     >
       <Input

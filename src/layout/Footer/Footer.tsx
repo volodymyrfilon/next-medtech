@@ -10,7 +10,7 @@ export const Footer = ({ className }: { className?: string }) => {
       <Logo white animateOnHover />
       <Socials />
       {/* privacy policy & copyright*/}
-      <div className="text-xs">
+      <div className="mt-auto text-xs">
         <Link
           href="/privacy-policy"
           className=" underline hover:text-accent-primary focus:text-accent-primary"

@@ -40,13 +40,18 @@ const results: result[] = [
 
 export const Results = () => {
   return (
-    <section id="result" className="grid grid-cols-1 grid-rows-1 gap-y-8">
-      <Title>Що ви отримаєте від зустрічей?</Title>
+    <section
+      id="result"
+      className="grid grid-cols-1 grid-rows-1 gap-5 md:grid-cols-2 xl:grid-cols-5 xl:grid-rows-2"
+    >
+      <Title className="md:pl-10 md:pt-10 md:text-left xl:col-span-2">
+        Що ви отримаєте від зустрічей?
+      </Title>
       <Card
+        className="!px-10 !py-12 xl:col-span-2"
         subtitle="Після проведення першої безкоштовної зустрічі ви озвучуєте свою проблему і що хочете натомість. І ми йдемо до цього результату упродовж п'яти зустрічей. Кожна зустріч має свою мету, відповідно після кожної ви отримуєте свої результати:"
         link="/"
         buttonEnd={false}
-        className="!px-10 !py-12"
       >
         <Button
           variant="black"
@@ -57,18 +62,18 @@ export const Results = () => {
           <ChevronRight className="h-5 w-5 text-white" />
         </Button>
       </Card>
-      <div className="flex flex-col gap-y-4">
-        {results.map(result => (
-          <Card
-            variant="gray"
-            key={result.number}
-            number={result.number}
-            title={result.title}
-            subtitle={result.subtitle}
-          />
-        ))}
-      </div>
+      {results.map(result => (
+        <Card
+          className="xl:row-span-1 "
+          variant="gray"
+          key={result.number}
+          number={result.number}
+          title={result.title}
+          subtitle={result.subtitle}
+        />
+      ))}
       <Card
+        className="xl:col-start-5 xl:row-start-1"
         variant="primary"
         number={1}
         title="Записатися на зустріч"
