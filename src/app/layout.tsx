@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description:
       'Відкрийте світ духовних практик зі мною, Юлією Логвиненко (Julia/Yulia Lohvynenko). Пропоную консультації з Матриці Долі, роботи з тілом та емоційного балансу. Використовую дошку Садху та метафоричні карти для трансформації та роботи зі страхами. Досліджую методи самопізнання та цвяхостояння.',
-    metadataBase: new URL(BASE_URL || ''),
+    metadataBase: new URL(BASE_URL || 'https://julisadhu-matrix.vercel.app'),
     alternates: {
       canonical: process.env.NEXT_PUBLIC_URL,
     },

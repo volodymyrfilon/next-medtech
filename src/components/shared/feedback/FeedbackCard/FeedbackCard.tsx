@@ -14,10 +14,10 @@ export const FeedbackCard = ({
   return (
     <div className="relative flex min-h-[570px] select-none flex-col items-center gap-y-6 rounded-[30px] bg-accent-gray px-8 py-16 sm:min-h-[460px]">
       <ICONS.QUOTE className="absolute left-8 top-8 w-7 fill-accent-primary" />
-      <div className="flex items-center justify-center gap-x-2 rounded-[20px] bg-accent-primary/70 px-2.5 py-1.5 font-didactGothic text-white">
+      <div className="absolute right-7 top-7 flex items-center justify-center gap-x-2 rounded-[20px] bg-accent-primary px-3 py-1.5 font-didactGothic text-sm text-white">
         {data.category}
       </div>
-      <p className="text-center font-didactGothic opacity-70">{data.feedback}</p>
+      <p className="mt-2 text-center font-didactGothic opacity-70">{data.feedback}</p>
       <Link
         href="https://www.instagram.com/julisadhu_/"
         rel="nofollow noreffer"

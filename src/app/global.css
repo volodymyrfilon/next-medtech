@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --primary: #c3b1a4;
+  --primary: #7d211d;
 }
 body {
   color: #070a11;
@@ -35,8 +35,8 @@ body {
 }
 
 .extended {
-  -webkit-text-stroke: 2px #c3b1a4;
-  text-stroke: 2px #c3b1a4;
+  -webkit-text-stroke: 2px var(--primary);
+  text-stroke: 2px var(--primary);
   color: transparent;
 }
 

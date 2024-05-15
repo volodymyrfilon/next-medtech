@@ -27,7 +27,7 @@ const config: Config = {
       },
       colors: {
         accent: {
-          primary: '#C3B1A4',
+          primary: '#7D211D',
           dark: '#070A11',
           gray: '#F0F1F3',
         },
