@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --primary: #7d211d;
+  --primary: #9f2c2c;
 }
 body {
   color: #070a11;
   font-family: var(--font-eUkraineHead);
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 /* Width / Track / Handle / Handle on Hover & Active */

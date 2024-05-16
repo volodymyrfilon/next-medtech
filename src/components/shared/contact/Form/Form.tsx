@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import emailjs from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Coffee, Instagram, Laptop, Send } from 'lucide-react';
+import { ChevronRight, Coffee, Instagram, Laptop, Send } from 'lucide-react';
 import Link from 'next/link';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -20,7 +20,6 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { ICONS } from '../../icons';
 
 const schema = z.object({
   fullName: z
@@ -211,7 +210,12 @@ export const Form = ({ className }: { className?: string }) => {
           control={control}
           render={({ field }) => (
             <>
-              <Checkbox id="isLegal" checked={field.value} onCheckedChange={field.onChange} />
+              <Checkbox
+                id="isLegal"
+                aria-label="Прийняти умови користування та політику конфіденційності"
+                checked={field.value}
+                onCheckedChange={field.onChange}
+              />
               <div className="grid gap-1.5 leading-none">
                 <label
                   htmlFor="terms"
@@ -248,7 +252,7 @@ export const Form = ({ className }: { className?: string }) => {
         ) : (
           <>
             Надіслати контакти
-            <ICONS.ARROW_RIGHT className="h-6 w-6 fill-white" />
+            <ChevronRight className="h-6 w-6 text-white" />
           </>
         )}
       </Button>

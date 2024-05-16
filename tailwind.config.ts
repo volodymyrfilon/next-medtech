@@ -9,6 +9,7 @@ const config: Config = {
       lg: '1000px',
       xl: '1280px',
       '2xl': '1440px',
+      '3xl': '1920px',
     },
     extend: {
       container: {
@@ -27,7 +28,7 @@ const config: Config = {
       },
       colors: {
         accent: {
-          primary: '#7D211D',
+          primary: '#9F2C2C',
           dark: '#070A11',
           gray: '#F0F1F3',
         },

@@ -36,7 +36,7 @@ export const Card = ({
       ) : null}
       {title ? <h3 className={number ? '' : 'mr-auto'}>{title}</h3> : null}
       {subtitle ? (
-        <h4 className="font-didactGothic text-base font-normal opacity-70">{subtitle}</h4>
+        <p className="font-didactGothic text-base font-normal opacity-70">{subtitle}</p>
       ) : null}
       {link ? (
         <Link

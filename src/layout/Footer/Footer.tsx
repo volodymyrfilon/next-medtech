@@ -18,7 +18,7 @@ export const Footer = ({ className }: { className?: string }) => {
           Умови користування та Політика конфіденційності.
         </Link>
         <div className="mt-1">
-          Copyright 2024 ©
+          Copyright 2024©
           <Link
             href="https://www.linkedin.com/in/volodymyr-filon/"
             className="underline hover:text-accent-primary focus:text-accent-primary"

@@ -1,5 +1,4 @@
 import { Title } from '@/components/shared/Title';
-import { ICONS } from '@/components/shared/icons';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ChevronRight } from 'lucide-react';
@@ -81,7 +80,7 @@ export const Results = () => {
         link="/#contact"
       >
         <Button variant="icon" className="bg-white" aria-label="Записатися на зустріч">
-          <ICONS.ARROW_RIGHT className="h-6 w-6 fill-accent-dark" />
+          <ChevronRight className="h-6 w-6 text-accent-dark" />
         </Button>
       </Card>
     </section>

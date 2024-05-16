@@ -14,8 +14,8 @@ const page = () => {
       <Image
         src="https://cdn.dribbble.com/users/252114/screenshots/3840347/mong03b.gif"
         priority
-        height={500}
-        width={650}
+        height={350}
+        width={500}
         alt={`Сторінку не знайдено!`}
       />
       <Link href="/" className="flex items-center gap-x-2 text-white">
