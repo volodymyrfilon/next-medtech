@@ -20,10 +20,10 @@ export const PrivacyPolicyPopup = () => {
 
   return (
     <div
-      className={`fixed bottom-0 z-[99] min-h-[48px] w-full bg-accent-dark px-8 py-1.5 ${visibleClassname}`}
+      className={`fixed bottom-0 z-[99] flex min-h-[48px] w-full justify-center bg-accent-dark/80 px-5 py-3 xl:px-8 ${visibleClassname}`}
     >
       <div className="flex items-center justify-between gap-x-3 text-[12px] font-light text-white">
-        <div className="w-5/6">
+        <div className="2xl:mx-auto 2xl:w-[1440px]">
           Ми використовуємо файли cookie щоб зробити ваше користування веб-сайтом зручнішим.
           Продовжуючи користуватися цим сайтом, ви погоджуєтесь із використанням файлів cookies.
           Дізнатись більше про файли cookie можна в&nbsp;
@@ -32,7 +32,7 @@ export const PrivacyPolicyPopup = () => {
           </Link>
         </div>
         <button
-          className="rounded border p-1.5 text-xs font-normal uppercase"
+          className="rounded border p-2 text-xs font-normal uppercase"
           onClick={hidePopup}
           aria-label="Прийняти політику конфіденційності"
         >
