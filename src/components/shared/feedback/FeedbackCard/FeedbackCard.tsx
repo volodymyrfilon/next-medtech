@@ -14,7 +14,7 @@ export const FeedbackCard = ({
   return (
     <div className="relative flex min-h-[570px] select-none flex-col items-center gap-y-6 rounded-[30px] bg-accent-gray px-8 py-16 sm:min-h-[460px] md:min-h-[340px] lg:min-h-[440px] xl:min-h-[360px] 2xl:min-h-[330px]">
       <ICONS.QUOTE className="absolute left-8 top-8 w-7 fill-accent-primary" />
-      <div className="absolute right-7 top-7 flex items-center justify-center gap-x-2 rounded-[20px] bg-accent-primary px-3 py-1.5 font-didactGothic text-sm text-white">
+      <div className="absolute right-7 top-7 flex items-center justify-center gap-x-2 rounded-[20px] bg-accent-primary px-3 py-1.5 font-didactGothic text-sm text-white lg:text-base">
         {data.category}
       </div>
       <p className="mt-2 text-center font-didactGothic opacity-70">{data.feedback}</p>

@@ -63,6 +63,7 @@ export const Hero = () => {
           alt="Image of author"
           fill
           priority
+          sizes="50vw"
           className="w-auto object-contain"
         />
       </div>

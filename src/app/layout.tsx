@@ -171,6 +171,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           {/* POPUP COOCKIE + GTAG */}
           <PrivacyPolicyPopup />
+          <div id="modal" />
         </Suspense>
       </body>
     </html>
