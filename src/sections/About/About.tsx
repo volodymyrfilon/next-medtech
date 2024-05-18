@@ -30,7 +30,7 @@ export const About = () => {
     >
       {aboutData.map((item, index) => (
         <div key={index} className="flex flex-col gap-y-8 ">
-          <h3 className="text_32px font-bold text-white">{item.title}</h3>
+          <h2 className="text_32px font-bold text-white">{item.title}</h2>
           <p className="font-didactGothic text-white/70">{replaceNewlines(item.text)}</p>
           <Button
             variant="white"

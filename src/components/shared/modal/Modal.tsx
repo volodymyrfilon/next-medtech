@@ -1,7 +1,6 @@
 'use client';
 import { MouseEvent, useEffect } from 'react';
 
-import { Button } from '@/components/ui/button';
 import { X } from 'lucide-react';
 import ClientOnlyPortal from '../../../../utils/ClientOnlyPortal';
 import { ModalProps } from './Modal.props';
@@ -32,20 +31,19 @@ const Modal = ({ onClose, children, className, scroll = false }: ModalProps) => 
   return (
     <ClientOnlyPortal selector="#modal">
       <div
-        className="bg-backdrop fixed inset-0 z-[99] flex items-center justify-center p-10"
+        className="fixed inset-0 z-[99] flex items-center justify-center bg-accent-dark/60 p-10"
         onClick={handleBackdropClick}
       >
         <div
           className={`modal-animation relative h-auto max-h-screen bg-white px-24 py-20 ${className}`}
         >
-          <Button
-            variant="icon"
-            className="absolute right-10 top-[35px] h-5 w-5 lg:top-10"
+          <button
+            className="absolute right-4 top-4 h-5 w-5"
             onClick={onClose}
             aria-label="Закрити вікно"
           >
             <X className="h-6 w-6 text-accent-dark" />
-          </Button>
+          </button>
           <div className={` ${scroll ? 'scrollbar h-[600px] overflow-y-scroll' : ''}`}>
             {children}
           </div>

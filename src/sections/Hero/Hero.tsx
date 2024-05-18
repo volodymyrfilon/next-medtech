@@ -1,11 +1,11 @@
-import { Title } from '@/components/shared/Title';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import { ChevronRight, Plus } from 'lucide-react';
 import Image from 'next/image';
 import { ReactNode } from 'react';
 
-interface ServiceProps {
+import { Title } from '@/components/shared/Title';
+import { HeroCards } from '@/components/shared/hero//HeroCards';
+
+export interface ServiceProps {
   buttonClassName?: string;
   variant: 'primary' | 'gray';
   title: string;
@@ -21,7 +21,7 @@ const services: ServiceProps[] = [
     title: 'Цвяхотерапія',
     link: '/',
     icon: <Plus className="h-5 w-5 text-accent-dark" />,
-    // layer: 'bg-sadhu-layer',
+    layer: 'bg-sadhu bg-cover bg-center bg-no-repeat',
   },
   {
     buttonClassName: 'border border-accent-dark/10 focus:outline-accent-dark/10',
@@ -29,7 +29,7 @@ const services: ServiceProps[] = [
     title: 'Розбір Матриці Долі',
     link: '/',
     icon: <Plus className="h-5 w-5 text-accent-dark" />,
-    // layer: 'bg-matrix-layer',
+    layer: 'bg-matrix bg-cover bg-center bg-no-repeat',
   },
   {
     buttonClassName: 'border border-accent-dark/10 focus:outline-accent-dark/10',
@@ -37,14 +37,15 @@ const services: ServiceProps[] = [
     title: 'МАК-карти',
     link: '/',
     icon: <Plus className="h-5 w-5 text-accent-dark" />,
-    // layer: 'bg-cards-layer',
+    layer: 'bg-cards bg-cover bg-center bg-no-repeat',
   },
   {
     buttonClassName: 'bg-white',
     variant: 'primary',
     title: 'Записатися на консультацію',
-    link: '/',
+    link: '/#contact',
     icon: <ChevronRight className="h-5 w-5 text-accent-dark" />,
+    // layer: 'bg-sadhu',
   },
 ];
 
@@ -67,21 +68,11 @@ export const Hero = () => {
           className="w-auto object-contain"
         />
       </div>
-      <div className="col-span-full grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 xl:col-span-1 xl:grid-cols-2 xl:grid-rows-2">
-        {services.map((service, index) => (
-          <Card
-            variant={service.variant}
-            title={service.title}
-            link={service.link}
-            key={index}
-            className={`w-full bg-cover bg-center bg-no-repeat md:h-52 ${service.layer}`}
-          >
-            <Button variant="icon" className={service.buttonClassName} aria-label={service.title}>
-              {service.icon}
-            </Button>
-          </Card>
-        ))}
-      </div>
+      <HeroCards
+        className="col-span-full xl:col-span-1 xl:grid-cols-2 xl:grid-rows-2"
+        services={services}
+        modalData="zazaza"
+      />
     </section>
   );
 };

@@ -10,11 +10,14 @@ export const Navigation = ({
   return (
     <nav>
       <ol
-        className={`font-didactGothic flex flex-col gap-x-8 lg:flex-row hover:[&>*]:underline ${className}`}
+        className={`flex flex-col gap-x-8 font-didactGothic lg:flex-row lg:hover:[&>*]:text-accent-primary ${className}`}
         onClick={onClick}
       >
         <li>
           <Link href="/#about">Про мене</Link>
+        </li>
+        <li>
+          <Link href="/#certificates">Сертифікати</Link>
         </li>
         <li>
           <Link href="/#result">Запити</Link>
@@ -26,7 +29,7 @@ export const Navigation = ({
           <Link href="/#feedback">Відгуки</Link>
         </li>
         <li>
-          <Link href="/#contact">Послуги та вартість</Link>
+          <Link href="/#contact">Зв'язок</Link>
         </li>
       </ol>
     </nav>

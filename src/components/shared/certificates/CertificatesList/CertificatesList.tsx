@@ -46,7 +46,7 @@ export const CertificatesList = ({
               height={item.height}
               className="w-auto rounded-[20px] object-contain"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2 text-center text-white">
+            <div className="absolute bottom-0 left-0 right-0 bg-accent-dark/60 p-2 text-center font-eUkraine font-light text-white">
               {item.title}
             </div>
           </div>
