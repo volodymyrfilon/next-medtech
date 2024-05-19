@@ -15,10 +15,10 @@ export const Footer = ({ className }: { className?: string }) => {
           href="/privacy-policy"
           className=" underline hover:text-accent-primary focus:text-accent-primary"
         >
-          Умови користування та Політика конфіденційності.
+          Умови користування та Політика конфіденційності
         </Link>
-        <div className="mt-1">
-          Copyright 2024©
+        <div className="mt-1.5">
+          © 2024 - Усі права захищено. Створено розробником&nbsp;
           <Link
             href="https://www.linkedin.com/in/volodymyr-filon/"
             className="underline hover:text-accent-primary focus:text-accent-primary"
@@ -27,7 +27,15 @@ export const Footer = ({ className }: { className?: string }) => {
           >
             Volodymyr Filon
           </Link>
-          .&nbsp;Усі права захищено.
+          &nbsp;та дизайнером&nbsp;
+          <Link
+            href="https://www.behance.net/bfe06a16"
+            className="underline hover:text-accent-primary focus:text-accent-primary"
+            rel="nofollow noreffer"
+            target="_blank"
+          >
+            Olga Tsaplii
+          </Link>
         </div>
       </div>
     </footer>

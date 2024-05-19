@@ -19,7 +19,7 @@ export const HeroCards = ({ className, services, modalData }: HeroCardsProps) =>
           title={service.title}
           link={service.link}
           key={index}
-          className={`w-full md:h-52 ${service.layer}`}
+          className={`w-full duration-300 md:h-52 lg:hover:scale-105 ${service.layer}`}
         >
           <Button variant="icon" className={service.buttonClassName} aria-label={service.title}>
             {service.icon}

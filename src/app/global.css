@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --primary: #9f2c2c;
+  --primary: #6b131e;
 }
 body {
   color: #070a11;
@@ -41,8 +41,9 @@ body {
   color: transparent;
 }
 
-.logo-hover-animate:hover {
-  @apply animate-text bg-gradient-to-r  from-yellow-500 to-blue-500 bg-clip-text text-transparent;
+.logo-hover-animate:hover,
+.logo-focus-animate:focus {
+  @apply animate-text bg-gradient-to-r from-yellow-500 to-blue-500 bg-clip-text text-transparent;
 }
 
 .text_32px {

@@ -12,7 +12,7 @@ export const Logo = ({
   return (
     <Link
       href="/"
-      className={`flex flex-col font-eUkraineHead text-xl font-bold uppercase ${animateOnHover && 'logo-hover-animate'} ${white && 'text-white'}`}
+      className={`logo-focus-animate flex flex-col font-eUkraineHead text-xl font-bold uppercase ${animateOnHover && 'logo-hover-animate'} ${white && 'text-white'}`}
       onClick={onClick}
     >
       Yulia

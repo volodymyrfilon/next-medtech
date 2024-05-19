@@ -29,7 +29,7 @@ const config: Config = {
       },
       colors: {
         accent: {
-          primary: '#9F2C2C',
+          primary: '#6B131E',
           dark: '#070A11',
           gray: '#F0F1F3',
         },
