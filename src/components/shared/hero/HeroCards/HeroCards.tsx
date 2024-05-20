@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ServiceProps } from '@/sections/Hero';
+import { ChevronRight } from 'lucide-react';
 
 interface HeroCardsProps {
   className?: string;
@@ -21,8 +22,8 @@ export const HeroCards = ({ className, services, modalData }: HeroCardsProps) =>
           key={index}
           className={`w-full duration-300 md:h-52 lg:hover:scale-105 ${service.layer}`}
         >
-          <Button variant="icon" className={service.buttonClassName} aria-label={service.title}>
-            {service.icon}
+          <Button variant="icon" className="bg-white" aria-label={service.title}>
+            <ChevronRight className="h-5 w-5 text-accent-dark" />
           </Button>
         </Card>
       ))}

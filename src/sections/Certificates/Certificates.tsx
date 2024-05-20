@@ -35,9 +35,9 @@ const certificates: CertificateType[] = [
   },
 ];
 
-export const Certificates = ({ className }: { className?: string }) => {
+export const Certificates = () => {
   return (
-    <section id="certificates" className={`flex flex-col gap-y-8 ${className}`}>
+    <section id="certificates" className="flex flex-col gap-y-8">
       <Title>Мої сертифікати</Title>
       <CertificatesList certificates={certificates} />
     </section>

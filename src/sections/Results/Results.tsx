@@ -42,7 +42,7 @@ const results: result[] = [
 export const Results = () => {
   return (
     <section
-      id="result"
+      id="results"
       className="grid grid-cols-1 grid-rows-1 gap-5 md:grid-cols-2 xl:grid-cols-5 xl:grid-rows-2"
     >
       <Title className="md:pl-10 md:pt-10 md:text-left xl:col-span-2">

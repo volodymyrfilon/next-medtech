@@ -1,51 +1,38 @@
-import { ChevronRight, Plus } from 'lucide-react';
 import Image from 'next/image';
-import { ReactNode } from 'react';
 
 import { Title } from '@/components/shared/Title';
 import { HeroCards } from '@/components/shared/hero//HeroCards';
 
 export interface ServiceProps {
-  buttonClassName?: string;
   variant: 'primary' | 'gray';
   title: string;
   link: string;
-  icon: ReactNode;
   layer?: string;
 }
 
 const services: ServiceProps[] = [
   {
-    buttonClassName: 'border border-accent-dark/10 focus:outline-accent-dark/10',
     variant: 'gray',
     title: 'Цвяхотерапія',
-    link: '/',
-    icon: <Plus className="h-5 w-5 text-accent-dark" />,
+    link: '/#services',
     layer: 'bg-sadhu bg-cover bg-center bg-no-repeat',
   },
   {
-    buttonClassName: 'border border-accent-dark/10 focus:outline-accent-dark/10',
     variant: 'gray',
     title: 'Розбір Матриці Долі',
-    link: '/',
-    icon: <Plus className="h-5 w-5 text-accent-dark" />,
+    link: '/#services',
     layer: 'bg-matrix bg-cover bg-center bg-no-repeat',
   },
   {
-    buttonClassName: 'border border-accent-dark/10 focus:outline-accent-dark/10',
     variant: 'gray',
     title: 'МАК-карти',
-    link: '/',
-    icon: <Plus className="h-5 w-5 text-accent-dark" />,
+    link: '/#services',
     layer: 'bg-cards bg-cover bg-center bg-no-repeat',
   },
   {
-    buttonClassName: 'bg-white',
     variant: 'primary',
     title: 'Записатися на консультацію',
     link: '/#contact',
-    icon: <ChevronRight className="h-5 w-5 text-accent-dark" />,
-    // layer: 'bg-sadhu',
   },
 ];
 

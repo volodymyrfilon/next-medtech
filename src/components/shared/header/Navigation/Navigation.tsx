@@ -17,16 +17,16 @@ export const Navigation = ({
           <Link href="/#about">Про мене</Link>
         </li>
         <li>
+          <Link href="/#services">Послуги</Link>
+        </li>
+        <li>
           <Link href="/#certificates">Сертифікати</Link>
         </li>
         <li>
-          <Link href="/#result">Запити</Link>
+          <Link href="/#results">Запити і Результати</Link>
         </li>
         <li>
-          <Link href="/#feedback">Результати зустрічей</Link>
-        </li>
-        <li>
-          <Link href="/#feedback">Відгуки</Link>
+          <Link href="/#feedbacks">Відгуки</Link>
         </li>
         <li>
           <Link href="/#contact">Зв'язок</Link>

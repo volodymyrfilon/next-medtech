@@ -43,7 +43,7 @@ const data = [
 export const Feedbacks = () => {
   return (
     <section
-      id="feedback"
+      id="feedbacks"
       className="grid grid-cols-1 gap-x-5 gap-y-8 overflow-x-hidden md:grid-cols-2 md:grid-rows-2 xl:grid-cols-5"
     >
       <Title className="md:col-start-2 md:pl-10 md:pt-10 md:text-left xl:col-start-3">
