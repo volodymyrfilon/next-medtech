@@ -29,6 +29,7 @@ export const Button = ({
                 : 'bg-white focus:outline-white lg:hover:text-accent-dark/50 [&>*]:lg:hover:translate-x-3'
           : 'pointer-events-none bg-gray-200 text-gray-400'
       }`}
+      onClick={onClick}
       {...props}
     >
       <>{children}</>
