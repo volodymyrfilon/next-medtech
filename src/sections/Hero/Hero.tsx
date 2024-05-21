@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { Title } from '@/components/shared/Title';
-import { HeroCards } from '@/components/shared/hero//HeroCards';
+import { HeroCards } from '@/components/shared/hero/HeroCards';
 
 export interface ServiceProps {
   variant: 'primary' | 'gray';
