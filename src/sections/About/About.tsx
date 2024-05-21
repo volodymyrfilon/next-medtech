@@ -1,6 +1,4 @@
-import { Button } from '@/components/ui/button';
-import { ChevronRight } from 'lucide-react';
-import { replaceText } from '../../../utils/formatText';
+import { AboutCard } from '@/components/shared/about/AboutCard';
 
 const aboutData: { title: string; text: string }[] = [
   {
@@ -19,20 +17,7 @@ export const About = () => {
       id="about"
       className="flex flex-col gap-x-10 gap-y-12 rounded-[30px] bg-accent-dark px-10 py-12 md:flex-row md:justify-between xl:gap-x-32"
     >
-      {aboutData.map((item, index) => (
-        <div key={index} className="flex flex-col gap-y-8 ">
-          <h2 className="text_32px font-bold text-white">{item.title}</h2>
-          <p className="font-didactGothic text-white/70">{replaceText(item.text)}</p>
-          <Button
-            variant="white"
-            className="flex w-[152px] gap-x-1"
-            aria-label={`Докладніше ${item.title}`}
-          >
-            Докладніше
-            <ChevronRight className="h-5 w-5 text-accent-dark" />
-          </Button>
-        </div>
-      ))}
+      <AboutCard data={aboutData} />
     </section>
   );
 };

@@ -81,7 +81,7 @@ export const Form = ({ className }: { className?: string }) => {
     handleSubmit,
     setError,
     control,
-    getValues,
+    reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<FormFields>({
     resolver: zodResolver(schema),
@@ -103,6 +103,8 @@ export const Form = ({ className }: { className?: string }) => {
       };
 
       emailjs.send(EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID, formParams, EMAIL_JS_PUBLIC_KEY);
+
+      reset();
     } catch (error) {
       setError('root', {
         message: 'Вибачте, сталася помилка. Будь ласка, спробуйте знову пізніше.',
