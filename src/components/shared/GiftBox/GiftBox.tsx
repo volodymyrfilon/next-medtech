@@ -13,7 +13,6 @@ export const GiftBox = () => {
     if (!isGiftBoxShown) {
       setIsVisible(true);
     }
-    localStorage.removeItem('giftBoxShown');
   }, []);
 
   useEffect(() => {
@@ -43,12 +42,12 @@ export const GiftBox = () => {
     <>
       <div
         className={clsx(
-          'fixed bottom-4 left-4 z-50 flex select-none items-center justify-center transition-transform duration-500 ease-in-out',
+          'fixed bottom-4 left-5 z-50 flex select-none items-center justify-center transition-transform duration-500 ease-in-out',
           { hidden: isClicked }
         )}
         onClick={handleBoxClick}
       >
-        <button className="h-16 w-16 animate-bounce rounded-full bg-red-500 text-4xl text-white shadow-lg transition-transform duration-500 ease-in-out hover:scale-110 md:h-20 md:w-20 md:text-5xl">
+        <button className="h-16 w-16 animate-bounce rounded-full bg-accent-primary text-4xl text-white shadow-lg transition-transform duration-500 ease-in-out hover:scale-110 md:h-20 md:w-20 md:text-5xl">
           🎁
         </button>
       </div>
@@ -56,7 +55,7 @@ export const GiftBox = () => {
       {isClicked && (
         <ClientOnlyPortal selector="#modal">
           <div
-            className="fixed inset-0 z-50 flex select-none items-center justify-center bg-black bg-opacity-50 transition-opacity duration-500 ease-in-out"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-500 ease-in-out"
             onClick={handleClose}
           >
             <div

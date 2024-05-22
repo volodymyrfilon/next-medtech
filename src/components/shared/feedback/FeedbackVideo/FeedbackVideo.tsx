@@ -30,7 +30,12 @@ const FeedbackVideo = ({ className }: FeedbackVideoProps) => {
       onMouseLeave={() => setIsHovered(false)}
       onClick={handlePlayPause}
     >
-      <video ref={videoRef} className="h-full w-full rounded-[30px] object-cover" controls={false}>
+      <video
+        ref={videoRef}
+        className="h-full w-full rounded-[30px] object-cover"
+        controls={false}
+        poster="/assets/preview.jpg"
+      >
         <source src="/assets/video.mov" type="video/mp4" />
         Your browser does not support this video component.
       </video>
