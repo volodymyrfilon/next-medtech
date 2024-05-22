@@ -4,7 +4,7 @@ import { CertificateType } from '@/sections/Certificates';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import ClientOnlyPortal from '../../../../../utils/ClientOnlyPortal';
+import ClientOnlyPortal from '../../../../utils/ClientOnlyPortal';
 
 export const CertificatesList = ({
   className,

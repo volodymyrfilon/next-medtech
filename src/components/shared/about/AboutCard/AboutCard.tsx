@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { AboutCardProps } from '@/sections/About';
 import { ChevronRight } from 'lucide-react';
 import { useState } from 'react';
-import { replaceText } from '../../../../../utils/formatText';
+import { replaceText } from '../../../../utils/formatText';
 
 export const AboutCard = ({ data }: { data: AboutCardProps[] }) => {
   const [expanded, setExpanded] = useState(false);

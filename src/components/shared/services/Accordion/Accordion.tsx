@@ -3,7 +3,7 @@
 import { ServiceProps } from '@/sections/Services';
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
-import { replaceText } from '../../../../../utils/formatText';
+import { replaceText } from '../../../../utils/formatText';
 
 export const Accordion = ({
   className,

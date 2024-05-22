@@ -97,6 +97,11 @@ export async function generateMetadata(): Promise<Metadata> {
         sizes: '192x192',
         url: `${process.env.BASE_URL}/favicon/android-chrome-192x192.png`,
       },
+      {
+        rel: 'icon',
+        sizes: '32x32',
+        url: `${process.env.BASE_URL}/favicon/favicon.ico`,
+      },
     ],
   };
 }
