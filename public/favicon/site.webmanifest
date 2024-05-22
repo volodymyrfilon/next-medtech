@@ -1,19 +1,56 @@
 {
-    "name": "",
-    "short_name": "",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+	"name": "Терапія Душі",
+	"description": "Відкрийте світ духовних практик зі мною, Юлією Логвиненко (Julia Lohvynenko). Пропоную консультації з Матриці Долі, роботи з тілом та емоційного балансу. Використовую дошку Садху та метафоричні карти для трансформації та роботи зі страхами. Досліджую методи самопізнання та цвяхостояння.",
+	"theme_color": "#9F2C2C",
+	"start_url": "/",
+	"lang": "uk",
+	"display": "browser",
+	"icons": [
+		{
+			"src": "android-chrome-192x192",
+			"sizes": "192x192",
+			"type": "png"
+		},
+		{
+			"src": "safari-pinned-tab",
+			"type": "svg"
+		},
+		{
+			"src": "android-chrome-512x512",
+			"sizes": "512x512",
+			"type": "png"
+		},
+		{
+			"src": "favicon-16x16",
+			"sizes": "16x16",
+			"type": "png"
+		},
+		{
+			"src": "favicon-32x32",
+			"sizes": "32x32",
+			"type": "png"
+		},
+		{
+			"src": "mstile-150x150",
+			"sizes": "150x150",
+			"type": "png"
+		},
+		{
+			"src": "favicon",
+			"sizes": "32x32",
+			"type": "ico"
+		},
+		{
+			"src": "apple-touch-icon",
+			"sizes": "180x180",
+			"type": "png"
+		}
+	],
+	"screenshots": [
+		{
+			"src": "seo",
+			"sizes": "638x579",
+			"type": "jpg"
+		}
+	]
 }

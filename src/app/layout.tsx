@@ -43,7 +43,7 @@ export async function generateMetadata(): Promise<Metadata> {
       },
       card: 'summary_large_image',
       images: {
-        url: `${process.env.BASE_URL}"/favicon/otg-img.png",`,
+        url: `${process.env.BASE_URL}"/favicon/seo.jpg",`,
         width: 638,
         height: 579,
         alt: 'Cвіт духовних практик з Юлією Логвиненко',
@@ -54,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       images: [
         {
-          url: `${process.env.BASE_URL}"/favicon/otg-img.png",`,
+          url: `${process.env.BASE_URL}"/favicon/seo.jpg",`,
           width: 638,
           height: 579,
           alt: 'Cвіт духовних практик з Юлією Логвиненко',
@@ -86,6 +86,16 @@ export async function generateMetadata(): Promise<Metadata> {
         rel: 'apple-touch-icon',
         sizes: '180x180',
         url: `${process.env.BASE_URL}/favicon/apple-touch-icon.png`,
+      },
+      {
+        rel: 'icon',
+        sizes: '512x512',
+        url: `${process.env.BASE_URL}/favicon/android-chrome-512x512.png`,
+      },
+      {
+        rel: 'icon',
+        sizes: '192x192',
+        url: `${process.env.BASE_URL}/favicon/android-chrome-192x192.png`,
       },
     ],
   };
