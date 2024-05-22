@@ -8,7 +8,9 @@ export const Contact = () => {
       className="grid grid-cols-1 gap-x-5 gap-y-8 md:grid-cols-2 md:grid-rows-2"
       id="contact"
     >
-      <Title className="pl-10 pt-10 md:row-span-1 md:text-left">Записатися на консультацію</Title>
+      <Title className="md:row-span-1 md:pl-10 md:pt-10 md:text-left">
+        Записатися на консультацію
+      </Title>
       <div className="rounded-[30px] bg-accent-gray px-5 py-12 md:col-start-2 md:row-span-full">
         <Form />
       </div>
