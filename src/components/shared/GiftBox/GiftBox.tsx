@@ -48,7 +48,7 @@ export const GiftBox = () => {
         )}
         onClick={handleBoxClick}
       >
-        <button className="animate-bounce rounded-full bg-red-500 px-4 py-2 text-[50px] text-white shadow-lg transition-transform duration-500 ease-in-out hover:scale-110">
+        <button className="h-16 w-16 animate-bounce rounded-full bg-red-500 text-4xl text-white shadow-lg transition-transform duration-500 ease-in-out hover:scale-110 md:h-20 md:w-20 md:text-5xl">
           🎁
         </button>
       </div>
