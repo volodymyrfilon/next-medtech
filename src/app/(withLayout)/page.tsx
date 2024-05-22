@@ -1,3 +1,4 @@
+import { GiftBox } from '@/components/shared/GiftBox';
 import { About } from '@/sections/About';
 import { Certificates } from '@/sections/Certificates';
 import { Contact } from '@/sections/Contact';
@@ -9,6 +10,7 @@ import { Services } from '@/sections/Services';
 const page = () => {
   return (
     <>
+      <GiftBox />
       <Hero />
       <About />
       <Services />

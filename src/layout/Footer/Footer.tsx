@@ -29,7 +29,7 @@ export const Footer = ({ className }: { className?: string }) => {
           </Link>
           &nbsp;та дизайнером&nbsp;
           <Link
-            href="https://www.behance.net/bfe06a16"
+            href="https://www.linkedin.com/in/olga-tsapliy-uiux-1a0238266/"
             className="underline hover:text-accent-primary focus:text-accent-primary"
             rel="nofollow noreffer"
             target="_blank"
