@@ -58,7 +58,6 @@ export const Hero = () => {
       <HeroCards
         className="col-span-full xl:col-span-1 xl:grid-cols-2 xl:grid-rows-2"
         services={services}
-        modalData="zazaza"
       />
     </section>
   );
