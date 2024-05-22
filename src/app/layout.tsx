@@ -8,7 +8,7 @@ import './global.css';
 import Loading from './loading';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const BASE_URL = process.env.NEXT_PUBLIC_URL;
+  const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL as string;
   return {
     title: {
       template: '%s | Терапія Душі',
@@ -16,9 +16,9 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description:
       'Відкрийте світ духовних практик зі мною, Юлією Логвиненко (Julia Lohvynenko). Пропоную консультації з Матриці Долі, роботи з тілом та емоційного балансу. Використовую дошку Садху та метафоричні карти для трансформації та роботи зі страхами. Досліджую методи самопізнання та цвяхостояння.',
-    metadataBase: new URL(BASE_URL || 'https://julisadhu-matrix.vercel.app'),
+    metadataBase: new URL(BASE_URL),
     alternates: {
-      canonical: process.env.NEXT_PUBLIC_URL,
+      canonical: process.env.BASE_URL,
     },
     keywords: [
       'Юлія Логвиненко',
@@ -43,7 +43,7 @@ export async function generateMetadata(): Promise<Metadata> {
       },
       card: 'summary_large_image',
       images: {
-        url: `${process.env.NEXT_PUBLIC_URL}"/favicon/otg-img.png",`,
+        url: `${process.env.BASE_URL}"/favicon/otg-img.png",`,
         width: 638,
         height: 579,
         alt: 'Cвіт духовних практик з Юлією Логвиненко',
@@ -54,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_URL}"/favicon/otg-img.png",`,
+          url: `${process.env.BASE_URL}"/favicon/otg-img.png",`,
           width: 638,
           height: 579,
           alt: 'Cвіт духовних практик з Юлією Логвиненко',
@@ -67,25 +67,25 @@ export async function generateMetadata(): Promise<Metadata> {
         template: '%s | Терапія Душі',
         default: 'Терапія Душі',
       },
-      url: process.env.NEXT_PUBLIC_URL,
+      url: process.env.BASE_URL,
     },
     icons: [
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
-        url: `${process.env.NEXT_PUBLIC_URL}/favicon/favicon-32x32.png`,
+        url: `${process.env.BASE_URL}/favicon/favicon-32x32.png`,
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
-        url: `${process.env.NEXT_PUBLIC_URL}/favicon/favicon-16x16.png`,
+        url: `${process.env.BASE_URL}/favicon/favicon-16x16.png`,
       },
       {
         rel: 'apple-touch-icon',
         sizes: '180x180',
-        url: `${process.env.NEXT_PUBLIC_URL}/favicon/apple-touch-icon.png`,
+        url: `${process.env.BASE_URL}/favicon/apple-touch-icon.png`,
       },
     ],
   };

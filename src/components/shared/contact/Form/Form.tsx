@@ -89,9 +89,9 @@ export const Form = ({ className }: { className?: string }) => {
 
   const onSubmit: SubmitHandler<FormFields> = data => {
     try {
-      const EMAIL_JS_SERVICE_ID = process.env.EMAIL_JS_SERVICE_ID || 'service_j8r5h38';
-      const EMAIL_JS_TEMPLATE_ID = process.env.EMAIL_JS_TEMPLATE_ID || 'template_7jx2b3h';
-      const EMAIL_JS_PUBLIC_KEY = process.env.EMAIL_JS_PUBLIC_KEY || '0plltW8PYgxE3m6KW';
+      const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
+      const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
+      const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
       const formParams = {
         fullName: data.fullName,
@@ -102,7 +102,7 @@ export const Form = ({ className }: { className?: string }) => {
         socialNickname: data.socialNickname,
       };
 
-      emailjs.send(EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID, formParams, EMAIL_JS_PUBLIC_KEY);
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formParams, EMAILJS_PUBLIC_KEY);
 
       reset();
     } catch (error) {
