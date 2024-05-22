@@ -6,10 +6,9 @@ import { ChevronRight } from 'lucide-react';
 interface HeroCardsProps {
   className?: string;
   services: ServiceProps[];
-  modalData: string;
 }
 
-export const HeroCards = ({ className, services, modalData }: HeroCardsProps) => {
+export const HeroCards = ({ className, services }: HeroCardsProps) => {
   return (
     <div
       className={`grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 ${className}`}

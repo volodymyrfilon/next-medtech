@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import { Suspense } from 'react';
 
 import { PrivacyPolicyPopup } from '@/components/shared/PrivacyPolicyPopup';
+import { GoogleTagManager } from '@next/third-parties/google';
 import './global.css';
 import Loading from './loading';
 
@@ -174,6 +175,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div id="modal" />
         </Suspense>
       </body>
+      <GoogleTagManager gtmId={`${process.env.NEXT_PUBLIC_GOOGLE_TAGS}`} />
     </html>
   );
 }
