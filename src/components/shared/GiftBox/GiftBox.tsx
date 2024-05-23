@@ -9,7 +9,7 @@ export const GiftBox = () => {
   const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
-    const isGiftBoxShown = localStorage.getItem('giftBoxShown');
+    const isGiftBoxShown = localStorage.getItem('giftJune2024');
     if (!isGiftBoxShown) {
       setIsVisible(true);
     }
@@ -28,7 +28,7 @@ export const GiftBox = () => {
 
   const handleBoxClick = () => {
     setIsClicked(true);
-    localStorage.setItem('giftBoxShown', 'true');
+    localStorage.setItem('giftJune2024', 'true');
   };
 
   const handleClose = () => {
@@ -55,7 +55,7 @@ export const GiftBox = () => {
       {isClicked && (
         <ClientOnlyPortal selector="#modal">
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-500 ease-in-out"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 font-eUkraine transition-opacity duration-500 ease-in-out"
             onClick={handleClose}
           >
             <div
@@ -67,7 +67,7 @@ export const GiftBox = () => {
                 Ви отримали знижку 10%! <br /> Додайте цей код у полі опису запиту чи проблеми!
               </p>
               <p>
-                Ваш код: <strong>SUMMER24</strong>
+                Ваш код: <strong>JUNE24</strong>
               </p>
               <p className="text-red-500">Увага! Код дійсний до кінця червня!</p>
               <button
