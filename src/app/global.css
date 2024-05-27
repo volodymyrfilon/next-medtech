@@ -175,3 +175,7 @@ body {
     slideIn 0.5s forwards,
     slideOut 0.5s 1.3s forwards;
 }
+
+html {
+  scroll-padding-top: 70px;
+}
