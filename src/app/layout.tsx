@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 
 import { PrivacyPolicyPopup } from '@/components/shared/PrivacyPolicyPopup';
 import { GoogleTagManager } from '@next/third-parties/google';
+import Head from 'next/head';
 import './global.css';
 import Loading from './loading';
 
@@ -22,16 +23,18 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     keywords: [
       'Юлія Логвиненко',
+      'Юля Логвиненко',
       'Yulia Lohvynenko',
+      'Julia Lohvynenko',
       'Цвяхотерапія Садху',
       'Дошка Садху',
-      'Медитація та цвяхостояння',
-      'Практика медитації',
+      'Цвяхостояння',
+      'Медитація',
       'Консультація психологічна',
       'Нумерологія Матриці Долі',
+      'Розбір Матриці Долі',
       'Метафоричні карти і підсвідомість',
       "Психосоматичне здоров'я",
-      'Емоційний баланс',
       'Робота з тілом',
       'Робота зі страхам',
       'Таро і Аркани',
@@ -43,7 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
       },
       card: 'summary_large_image',
       images: {
-        url: `${process.env.BASE_URL}"/favicon/seo.jpg",`,
+        url: `${process.env.BASE_URL}/favicon/seo.jpg`,
         width: 638,
         height: 579,
         alt: 'Cвіт духовних практик з Юлією Логвиненко',
@@ -54,7 +57,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       images: [
         {
-          url: `${process.env.BASE_URL}"/favicon/seo.jpg",`,
+          url: `${process.env.BASE_URL}/favicon/seo.jpg`,
           width: 638,
           height: 579,
           alt: 'Cвіт духовних практик з Юлією Логвиненко',
@@ -182,6 +185,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="uk"
       className={`${eUkraineHead.variable} ${eUkraine.variable} ${didactGothic.variable} font-sans  selection:bg-accent-primary/50`}
     >
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="_hZ2i8-A-lDWF4-oyU2QKciK8pZA-KTZ9ssTt137IKc"
+        />
+      </Head>
       <body className="relative flex flex-col">
         <Suspense fallback={<Loading />}>
           {children}
