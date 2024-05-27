@@ -32,7 +32,7 @@ export const PrivacyPolicyPopup = () => {
           </Link>
         </div>
         <button
-          className="rounded border p-2 text-xs font-normal uppercase"
+          className="rounded border p-2 text-xs font-normal uppercase hover:bg-white hover:text-accent-dark"
           onClick={hidePopup}
           aria-label="Прийняти політику конфіденційності"
         >
