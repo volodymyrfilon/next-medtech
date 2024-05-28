@@ -83,20 +83,77 @@ const page = () => {
     inspirationPrimary = checkIsValid22(month);
     materialPrimary = checkIsValid22(year);
     karmaPrimary = checkIsValid22(portraitPrimary + inspirationPrimary + materialPrimary);
-    comfort = checkIsValid22(karmaPrimary + portraitPrimary + inspirationPrimary + materialPrimary);
+    comfort = checkIsValid22(portraitPrimary + inspirationPrimary + materialPrimary + karmaPrimary);
+    fathersLinePrimary = checkIsValid22(portraitPrimary + inspirationPrimary);
+    fathersLineSoulsTaskPrimary = checkIsValid22(materialPrimary + karmaPrimary);
+    mothersLinePrimary = checkIsValid22(inspirationPrimary + materialPrimary);
+    mothersLineSoulsTaskPrimary = checkIsValid22(portraitPrimary + karmaPrimary);
 
-    console.log(portraitPrimary);
-    console.log(inspirationPrimary);
-    console.log(materialPrimary);
-    console.log(karmaPrimary);
-    console.log(comfort);
+    karmaTetriary = checkIsValid22(comfort + karmaPrimary);
+    karmaSecondary = checkIsValid22(karmaTetriary + karmaPrimary);
+    inspirationTetriary = checkIsValid22(comfort + inspirationPrimary);
+    inspirationSecondary = checkIsValid22(inspirationTetriary + inspirationPrimary);
+    materialTetriary = checkIsValid22(comfort + materialPrimary);
+    materialSecondary = checkIsValid22(materialTetriary + materialPrimary);
+    portraitTetriary = checkIsValid22(comfort + portraitPrimary);
+    portraitSecondary = checkIsValid22(portraitTetriary + portraitPrimary);
+    fathersLineTetriary = checkIsValid22(comfort + fathersLinePrimary);
+    fathersLineSecondary = checkIsValid22(fathersLineTetriary + fathersLinePrimary);
+    fathersLineSoulsTaskTetriary = checkIsValid22(comfort + fathersLineSoulsTaskPrimary);
+    fathersLineSoulsTaskSecondary = checkIsValid22(
+      fathersLineSoulsTaskTetriary + fathersLineSoulsTaskPrimary
+    );
+    mothersLineTetriary = checkIsValid22(comfort + mothersLinePrimary);
+    mothersLineSecondary = checkIsValid22(mothersLineTetriary + mothersLinePrimary);
+    mothersLineSoulsTaskTetriary = checkIsValid22(comfort + mothersLineSoulsTaskPrimary);
+    mothersLineSoulsTaskSecondary = checkIsValid22(
+      mothersLineSoulsTaskTetriary + mothersLineSoulsTaskPrimary
+    );
 
-    setZoneOfComfort(portraitPrimary);
-    setZoneOfPortrait([portraitPrimary, 0, 0]);
-    setZoneOfInspiration([inspirationPrimary, 0, 0]);
-    setZoneOfMaterial([materialPrimary, 0, 0]);
-    setZoneOfKarma([karmaPrimary, 0, 0]);
+    centerOfPartners = checkIsValid22(karmaTetriary + materialTetriary);
+    centerOfMaterials = checkIsValid22(centerOfPartners + materialTetriary);
+    centerOfRelations = checkIsValid22(centerOfPartners + karmaTetriary);
+    chakraAnahataOfPortrait = checkIsValid22(comfort + portraitTetriary);
+    chakraAnahataOfInspiration = checkIsValid22(comfort + inspirationTetriary);
+
+    setZoneOfComfort(comfort);
+    setZoneOfPortrait([portraitPrimary, portraitSecondary, portraitTetriary]);
+    setZoneOfInspiration([inspirationPrimary, inspirationSecondary, inspirationTetriary]);
+    setZoneOfMaterial([materialPrimary, materialSecondary, materialTetriary]);
+    setZoneOfKarma([karmaPrimary, karmaSecondary, karmaTetriary]);
+    setZoneOfFathersLine([fathersLinePrimary, fathersLineSecondary, fathersLineTetriary]);
+    setZoneOfFathersLineSoulsTask([
+      fathersLineSoulsTaskPrimary,
+      fathersLineSoulsTaskSecondary,
+      fathersLineSoulsTaskTetriary,
+    ]);
+    setZoneOfMothersLine([mothersLinePrimary, mothersLineSecondary, mothersLineTetriary]);
+    setZoneOfMothersLineSoulsTask([
+      mothersLineSoulsTaskPrimary,
+      mothersLineSoulsTaskSecondary,
+      mothersLineSoulsTaskTetriary,
+    ]);
+
+    setCenterOfPartners(centerOfPartners);
+    setCenterOfMaterials(centerOfMaterials);
+    setCenterOfRelations(centerOfRelations);
+    setChakraAnahataOfPortrait(chakraAnahataOfPortrait);
+    setChakraAnahataOfInspiration(chakraAnahataOfInspiration);
   }
+  console.log('zoneOfComfort:', zoneOfComfort);
+  console.log('chakraAnahataOfPortrait:', chakraAnahataOfPortrait);
+  console.log('chakraAnahataOfInspiration:', chakraAnahataOfInspiration);
+  console.log('centerOfMaterials:', centerOfMaterials);
+  console.log('centerOfRelations:', centerOfRelations);
+  console.log('centerOfPartners:', centerOfPartners);
+  console.log('zoneOfPortrait:', zoneOfPortrait);
+  console.log('zoneOfInspiration:', zoneOfInspiration);
+  console.log('zoneOfMaterial:', zoneOfMaterial);
+  console.log('zoneOfKarma:', zoneOfKarma);
+  console.log('zoneOfFathersLine:', zoneOfFathersLine);
+  console.log('zoneOfFathersLineSoulsTask:', zoneOfFathersLineSoulsTask);
+  console.log('zoneOfMothersLine:', zoneOfMothersLine);
+  console.log('zoneOfMothersLineSoulsTask:', zoneOfMothersLineSoulsTask);
 
   return (
     <>
@@ -110,24 +167,6 @@ const page = () => {
       <Button onClick={() => calculateMatrix(dateOfBirth)}>Submit</Button>
       <div className="relative mx-auto h-[900px] w-[930px]">
         <Image src="/images/matrix/matrix.png" fill alt="" className="w-full" />
-
-        {/* zone of comfort */}
-        <div className="absolute left-1/2 top-[49.8%] flex h-20 w-20 -translate-x-7 -translate-y-7 items-center justify-center rounded-full bg-yellow-400 text-center text-4xl text-black ">
-          {zoneOfComfort ?? 0}
-        </div>
-
-        <span className="absolute left-9 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-purple-500 text-center text-xl text-black">
-          {zoneOfPortrait[0] ?? 0}
-        </span>
-        <span className="absolute left-1/2 top-7 flex h-9 w-9 -translate-x-1/2  items-center justify-center rounded-full bg-purple-500 text-center text-xl text-black">
-          {zoneOfInspiration[0] ?? 0}
-        </span>
-        <span className="absolute right-9 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-red-500 text-center text-xl text-black">
-          {zoneOfMaterial[0] ?? 0}
-        </span>
-        <span className="absolute left-1/2 top-[100%] flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-red-500 text-center text-xl text-black">
-          {zoneOfKarma[0] ?? 0}
-        </span>
       </div>
     </>
   );
