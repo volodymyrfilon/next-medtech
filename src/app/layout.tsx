@@ -4,7 +4,6 @@ import { Suspense } from 'react';
 
 import { PrivacyPolicyPopup } from '@/components/shared/PrivacyPolicyPopup';
 import { GoogleTagManager } from '@next/third-parties/google';
-import Head from 'next/head';
 import './global.css';
 import Loading from './loading';
 
@@ -185,12 +184,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="uk"
       className={`${eUkraineHead.variable} ${eUkraine.variable} ${didactGothic.variable} font-sans  selection:bg-accent-primary/50`}
     >
-      <Head>
+      <head>
         <meta
           name="google-site-verification"
-          content="_hZ2i8-A-lDWF4-oyU2QKciK8pZA-KTZ9ssTt137IKc"
+          content="t5cp097uSyGvzs3HWeI9odge31BRFt5K9sRAdZp8Cic"
         />
-      </Head>
+      </head>
       <body className="relative flex flex-col">
         <Suspense fallback={<Loading />}>
           {children}
