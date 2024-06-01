@@ -7,106 +7,204 @@ import { GoogleTagManager } from '@next/third-parties/google';
 import './global.css';
 import Loading from './loading';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL as string;
-  return {
+// export async function generateMetadata(): Promise<Metadata> {
+//   const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL as string;
+//   return {
+//     title: {
+//       template: '%s | Терапія Душі',
+//       default: 'Терапія Душі',
+//     },
+//     description:
+//       'Відкрийте світ духовних практик зі мною, Юлією Логвиненко (Julia Lohvynenko). Пропоную консультації з Матриці Долі, роботи з тілом та емоційного балансу. Використовую дошку Садху та метафоричні карти для трансформації та роботи зі страхами. Досліджую методи самопізнання та цвяхостояння.',
+//     metadataBase: new URL(BASE_URL),
+//     alternates: {
+//       canonical: process.env.BASE_URL,
+//     },
+//     keywords: [
+//       'Юлія Логвиненко',
+//       'Юля Логвиненко',
+//       'Yulia Lohvynenko',
+//       'Julia Lohvynenko',
+//       'Цвяхотерапія Садху',
+//       'Дошка Садху',
+//       'Цвяхостояння',
+//       'Медитація',
+//       'Консультація психологічна',
+//       'Нумерологія Матриці Долі',
+//       'Розбір Матриці Долі',
+//       'Метафоричні карти і підсвідомість',
+//       "Психосоматичне здоров'я",
+//       'Робота з тілом',
+//       'Робота зі страхам',
+//       'Таро і Аркани',
+//     ],
+//     twitter: {
+//       title: {
+//         template: '%s | Терапія Душі',
+//         default: 'Терапія Душі',
+//       },
+//       card: 'summary_large_image',
+//       images: {
+//         url: `${process.env.BASE_URL}/favicon/seo.jpg`,
+//         width: 638,
+//         height: 579,
+//         alt: 'Cвіт духовних практик з Юлією Логвиненко',
+//       },
+//       description:
+//         'Відкрийте світ духовних практик зі мною, Юлією Логвиненко (Julia Lohvynenko). Пропоную консультації з Матриці Долі, роботи з тілом та емоційного балансу. Використовую дошку Садху та метафоричні карти для трансформації та роботи зі страхами. Досліджую методи самопізнання та цвяхостояння.',
+//     },
+//     openGraph: {
+//       images: [
+//         {
+//           url: `${process.env.BASE_URL}/favicon/seo.jpg`,
+//           width: 638,
+//           height: 579,
+//           alt: 'Cвіт духовних практик з Юлією Логвиненко',
+//         },
+//       ],
+//       description:
+//         'Відкрийте світ духовних практик зі мною, Юлією Логвиненко (Julia Lohvynenko). Пропоную консультації з Матриці Долі, роботи з тілом та емоційного балансу. Використовую дошку Садху та метафоричні карти для трансформації та роботи зі страхами. Досліджую методи самопізнання та цвяхостояння.',
+//       type: 'website',
+//       title: {
+//         template: '%s | Терапія Душі',
+//         default: 'Терапія Душі',
+//       },
+//       url: process.env.BASE_URL,
+//     },
+//     icons: [
+//       {
+//         rel: 'icon',
+//         type: 'image/png',
+//         sizes: '32x32',
+//         url: `${process.env.BASE_URL}/favicon/favicon-32x32.png`,
+//       },
+//       {
+//         rel: 'icon',
+//         type: 'image/png',
+//         sizes: '16x16',
+//         url: `${process.env.BASE_URL}/favicon/favicon-16x16.png`,
+//       },
+//       {
+//         rel: 'apple-touch-icon',
+//         sizes: '180x180',
+//         url: `${process.env.BASE_URL}/favicon/apple-touch-icon.png`,
+//       },
+//       {
+//         rel: 'icon',
+//         sizes: '512x512',
+//         url: `${process.env.BASE_URL}/favicon/android-chrome-512x512.png`,
+//       },
+//       {
+//         rel: 'icon',
+//         sizes: '192x192',
+//         url: `${process.env.BASE_URL}/favicon/android-chrome-192x192.png`,
+//       },
+//       {
+//         rel: 'icon',
+//         sizes: '32x32',
+//         url: `${process.env.BASE_URL}/favicon/favicon.ico`,
+//       },
+//     ],
+//   };
+// }
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Терапія Душі',
+    default: 'Терапія Душі',
+  },
+  description:
+    'Відкрийте світ духовних практик зі мною, Юлією Логвиненко (Julia Lohvynenko). Пропоную консультації з Матриці Долі, роботи з тілом та емоційного балансу. Використовую дошку Садху та метафоричні карти для трансформації та роботи зі страхами. Досліджую методи самопізнання та цвяхостояння.',
+  metadataBase: new URL('https://juliasadhu-matrix.vercel.app/'),
+  alternates: {
+    canonical: 'https://juliasadhu-matrix.vercel.app/',
+  },
+  keywords: [
+    'Юлія Логвиненко',
+    'Юля Логвиненко',
+    'Yulia Lohvynenko',
+    'Julia Lohvynenko',
+    'Цвяхотерапія Садху',
+    'Дошка Садху',
+    'Цвяхостояння',
+    'Медитація',
+    'Консультація психологічна',
+    'Нумерологія Матриці Долі',
+    'Розбір Матриці Долі',
+    'Метафоричні карти і підсвідомість',
+    "Психосоматичне здоров'я",
+    'Робота з тілом',
+    'Робота зі страхам',
+    'Таро і Аркани',
+  ],
+  twitter: {
     title: {
       template: '%s | Терапія Душі',
       default: 'Терапія Душі',
     },
+    card: 'summary_large_image',
+    images: {
+      url: `https://juliasadhu-matrix.vercel.app/favicon/seo.jpg`,
+      width: 638,
+      height: 579,
+      alt: 'Cвіт духовних практик з Юлією Логвиненко',
+    },
     description:
       'Відкрийте світ духовних практик зі мною, Юлією Логвиненко (Julia Lohvynenko). Пропоную консультації з Матриці Долі, роботи з тілом та емоційного балансу. Використовую дошку Садху та метафоричні карти для трансформації та роботи зі страхами. Досліджую методи самопізнання та цвяхостояння.',
-    metadataBase: new URL(BASE_URL),
-    alternates: {
-      canonical: process.env.BASE_URL,
-    },
-    keywords: [
-      'Юлія Логвиненко',
-      'Юля Логвиненко',
-      'Yulia Lohvynenko',
-      'Julia Lohvynenko',
-      'Цвяхотерапія Садху',
-      'Дошка Садху',
-      'Цвяхостояння',
-      'Медитація',
-      'Консультація психологічна',
-      'Нумерологія Матриці Долі',
-      'Розбір Матриці Долі',
-      'Метафоричні карти і підсвідомість',
-      "Психосоматичне здоров'я",
-      'Робота з тілом',
-      'Робота зі страхам',
-      'Таро і Аркани',
-    ],
-    twitter: {
-      title: {
-        template: '%s | Терапія Душі',
-        default: 'Терапія Душі',
-      },
-      card: 'summary_large_image',
-      images: {
-        url: `${process.env.BASE_URL}/favicon/seo.jpg`,
+  },
+  openGraph: {
+    images: [
+      {
+        url: `https://juliasadhu-matrix.vercel.app/favicon/seo.jpg`,
         width: 638,
         height: 579,
         alt: 'Cвіт духовних практик з Юлією Логвиненко',
       },
-      description:
-        'Відкрийте світ духовних практик зі мною, Юлією Логвиненко (Julia Lohvynenko). Пропоную консультації з Матриці Долі, роботи з тілом та емоційного балансу. Використовую дошку Садху та метафоричні карти для трансформації та роботи зі страхами. Досліджую методи самопізнання та цвяхостояння.',
-    },
-    openGraph: {
-      images: [
-        {
-          url: `${process.env.BASE_URL}/favicon/seo.jpg`,
-          width: 638,
-          height: 579,
-          alt: 'Cвіт духовних практик з Юлією Логвиненко',
-        },
-      ],
-      description:
-        'Відкрийте світ духовних практик зі мною, Юлією Логвиненко (Julia Lohvynenko). Пропоную консультації з Матриці Долі, роботи з тілом та емоційного балансу. Використовую дошку Садху та метафоричні карти для трансформації та роботи зі страхами. Досліджую методи самопізнання та цвяхостояння.',
-      type: 'website',
-      title: {
-        template: '%s | Терапія Душі',
-        default: 'Терапія Душі',
-      },
-      url: process.env.BASE_URL,
-    },
-    icons: [
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '32x32',
-        url: `${process.env.BASE_URL}/favicon/favicon-32x32.png`,
-      },
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '16x16',
-        url: `${process.env.BASE_URL}/favicon/favicon-16x16.png`,
-      },
-      {
-        rel: 'apple-touch-icon',
-        sizes: '180x180',
-        url: `${process.env.BASE_URL}/favicon/apple-touch-icon.png`,
-      },
-      {
-        rel: 'icon',
-        sizes: '512x512',
-        url: `${process.env.BASE_URL}/favicon/android-chrome-512x512.png`,
-      },
-      {
-        rel: 'icon',
-        sizes: '192x192',
-        url: `${process.env.BASE_URL}/favicon/android-chrome-192x192.png`,
-      },
-      {
-        rel: 'icon',
-        sizes: '32x32',
-        url: `${process.env.BASE_URL}/favicon/favicon.ico`,
-      },
     ],
-  };
-}
+    description:
+      'Відкрийте світ духовних практик зі мною, Юлією Логвиненко (Julia Lohvynenko). Пропоную консультації з Матриці Долі, роботи з тілом та емоційного балансу. Використовую дошку Садху та метафоричні карти для трансформації та роботи зі страхами. Досліджую методи самопізнання та цвяхостояння.',
+    type: 'website',
+    title: {
+      template: '%s | Терапія Душі',
+      default: 'Терапія Душі',
+    },
+    url: 'https://juliasadhu-matrix.vercel.app/',
+  },
+  icons: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      url: `https://juliasadhu-matrix.vercel.app/favicon/favicon-32x32.png`,
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      url: `https://juliasadhu-matrix.vercel.app/favicon/favicon-16x16.png`,
+    },
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      url: `https://juliasadhu-matrix.vercel.app/favicon/apple-touch-icon.png`,
+    },
+    {
+      rel: 'icon',
+      sizes: '512x512',
+      url: `https://juliasadhu-matrix.vercel.app/favicon/android-chrome-512x512.png`,
+    },
+    {
+      rel: 'icon',
+      sizes: '192x192',
+      url: `https://juliasadhu-matrix.vercel.app/favicon/android-chrome-192x192.png`,
+    },
+    {
+      rel: 'icon',
+      sizes: '32x32',
+      url: `https://juliasadhu-matrix.vercel.app/favicon/favicon.ico`,
+    },
+  ],
+};
 
 const eUkraine = localFont({
   variable: '--font-eUkraine',
