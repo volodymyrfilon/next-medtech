@@ -1,7 +1,21 @@
 {
   "name": "next-medtech",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.1.0",
+  "description": "Next-Medtech by Volodymyr F",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/volodymyrfilon/next-medtech"
+  },
+  "keywords": [
+    "Next-Medtech"
+  ],
+  "author": "Next-Medtech Authors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volodymyrfilon/next-medtech/issues"
+  },
+  "homepage": "https://github.com/volodymyrfilon/next-medtech",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
